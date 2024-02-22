@@ -6,7 +6,11 @@
 */
 @import url('./reset.css');
 @import url('./header.css');
-@import ('node_modules/normalize.css/normalize.css');
+@import url('./mobMenu.css');
+@import url('./sidebar.css');
+@import url('./supportUkraine.css');
+@import url('./shopingList.css');
+@import 'node_modules/normalize.css/normalize.css';
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
