@@ -1,0 +1,20 @@
+.ukr-list{
+    width: 335px;
+    max-height: 460px;
+    background-color: rgb(79, 46, 232);
+    background: linear-gradient(to bottom, #4F2EE8, #c7c8f3);
+    border-radius: 12px;
+}
+
+.ukr-p{
+    text-align: center;
+    color: #fff;
+    padding-top: 24px;
+    padding-bottom: 32px;
+}
+
+.ukr-item{
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
