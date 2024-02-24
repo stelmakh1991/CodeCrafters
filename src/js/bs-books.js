@@ -1,34 +1,33 @@
-import { BooksApi } from "./books-api";
+// import { BooksApi } from "./books-api";
 
 const refs = {
   bestBooksSection: document.querySelector('.bs-books-section'),
-  seeMoreBtn: document.querySelector(".bs-books-see-more-btn")
 };
 
-const booksApi = new BooksApi();
+// const booksApi = new BooksApi();
 
-// async function getBestBooks() {
-//   const url = 'https://books-backend.p.goit.global/books/top-books';
-//   try {
-//     const res = await fetch(url);
-//     const data = res.json();
-//     return data;
-//   } catch (error) {
-//     console.error(error.message);
-//   }
-// }
-// async function getCategoryBooks(categoryName) {
-//     const url = `https://books-backend.p.goit.global/books/category?category=${categoryName}`;
-//     try {
-//       const res = await fetch(url);
-//       const data = res.json();
-//       return data;
-//     } catch (error) {
-//       console.error(error.message);
-//     }
-//   }
+async function getBestBooks() {
+  const url = 'https://books-backend.p.goit.global/books/top-books';
+  try {
+    const res = await fetch(url);
+    const data = res.json();
+    return data;
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+async function getCategoryBooks(categoryName) {
+    const url = `https://books-backend.p.goit.global/books/category?category=${categoryName}`;
+    try {
+      const res = await fetch(url);
+      const data = res.json();
+      return data;
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
 
-function createGalleryItem(data) {
+async function createGalleryItem(data) {
   const markup = `
       <h1 class="bs-books-title">
         Best Sellers <span class="bs-books-title-blue">Books</span>
@@ -78,8 +77,108 @@ function createGalleryItem(data) {
 }
 
 async function createMarkup() {
-  const data = await booksApi.getTopBooks();
+  const data = await getBestBooks();
   createGalleryItem(data);
 }
-createMarkup();
+await createMarkup();
+//=======================================================
+const SeeMoreBtn = document.querySelector(".bs-list");
 
+
+SeeMoreBtn.addEventListener("click", async function (event) {
+  if (event.target.nodeName !== 'BUTTON') return;
+	const category = event.target.dataset.id;
+ 
+  try {
+    refs.bestBooksSection.innerHTML = '';
+    const data = await getCategoryBooks(category);
+    renderMarkup(data);
+     console.log(data);
+      } catch (error) {
+        console.error(error.message);
+      }
+});
+
+function booksCategoryTemplate({
+  _id,
+  book_image,
+  title,
+  author,
+    }) {
+      return `
+              <a href="#" class="bs-books-item-link link" rel="noopener noreferrer" data-id='${_id}'>
+        
+              <div class="bs-books-card">
+                <img
+                  src="${book_image}"
+                  alt="${title}"
+                  class="bs-books-card-img"
+                  width="180"
+                  height="256"
+                  loading="lazy"
+                />
+
+               </div> 
+                <div class="bs-books-item-thumb">
+                  <h3 class="bs-books-item-title">${title.slice(0, 18)}</h3>
+                  <p class="bs-books-author">${author}</p>
+                </div>
+             </a>`;
+    }
+    function renderMarkup(books) {
+          const markup = books.map(booksCategoryTemplate).join('');
+          refs.bestBooksSection.insertAdjacentHTML('beforeend', markup);
+        }
+
+
+
+
+
+
+
+
+
+
+// async function handleButtonClick(e) {
+//   const id = await e.target.dataset.id;
+//   // createCategoryMarkup(id);
+//   console.log("Hello");
+// }
+// const parent = document.querySelector(".bs-books-item");
+
+// parent.addEventListener("click", (event) => {
+//   console.log("event.target: ", event.target);
+//   console.log("event.currentTarget: ", event.currentTarget);
+// });
+
+
+
+// async function onSeeMoreBtn(e) {
+//   if (e.target.nodeName !== 'BUTTON') return;
+//   const query = e.target.closest('button').name;
+  
+//   try {
+//     refs.bestBooksSection.innerHTML = '';
+//     const getCategory = await getCategoryBooks(query);
+//     const paintedList = await paintMarkup(caughtCategory, query);
+//     bookListRef.innerHTML = paintedList;
+    
+//   } catch (error) {
+//     console.error(error.message);
+//   }
+
+//   
+  
+//   let gallery = new SimpleLightbox('.gallery a', {
+//     showCounter: false,
+//     captionDelay: 250,
+//     captions: true,
+//     captionsData: 'alt',
+//     captionPosition: 'bottom',
+//   });
+  
+//   function renderMarkup(images) {
+//     const markup = images.map(galleryTemplate).join('');
+//     refs.gallery.insertAdjacentHTML('beforeend', markup);
+//     gallery.refresh();
+//   }
