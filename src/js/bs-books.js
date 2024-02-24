@@ -1,32 +1,33 @@
+import { BooksApi } from "./books-api";
 const refs = {
   bestBooksSection: document.querySelector('.bs-books-section'),
   seeMoreBtn: document.querySelector(".bs-books-see-more-btn")
 };
+const booksApi = new BooksApi();
 
-async function getBestBooks() {
-  const url = 'https://books-backend.p.goit.global/books/top-books';
-  try {
-    const res = await fetch(url);
-    const data = res.json();
-    return data;
-  } catch (error) {
-    console.error(error.message);
-  }
-}
-async function getCategoryBooks(categoryName) {
-    const url = `https://books-backend.p.goit.global/books/category?category=${categoryName}`;
-    try {
-      const res = await fetch(url);
-      const data = res.json();
-      return data;
-    } catch (error) {
-      console.error(error.message);
-    }
-  }
+// async function getBestBooks() {
+//   const url = 'https://books-backend.p.goit.global/books/top-books';
+//   try {
+//     const res = await fetch(url);
+//     const data = res.json();
+//     return data;
+//   } catch (error) {
+//     console.error(error.message);
+//   }
+// }
+// async function getCategoryBooks(categoryName) {
+//     const url = `https://books-backend.p.goit.global/books/category?category=${categoryName}`;
+//     try {
+//       const res = await fetch(url);
+//       const data = res.json();
+//       return data;
+//     } catch (error) {
+//       console.error(error.message);
+//     }
+//   }
 
- 
-
-function createGalleryItem(data) {
+async function createGalleryItem() {
+  const data = await booksApi.getTopBooks(); 
   const markup = `
       <h1 class="bs-books-title">
         Best Sellers <span class="bs-books-title-blue">Books</span>
