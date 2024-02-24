@@ -1,0 +1,14 @@
+.btn-list {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+.categories-box {
+  height: 228px;
+  width: 335px;
+  overflow-y: scroll;
+}
