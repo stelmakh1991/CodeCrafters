@@ -4,9 +4,8 @@ const refs = {
   bestBooksSection: document.querySelector('.bs-books-section'),
   seeMoreBtn: document.querySelector(".bs-books-see-more-btn")
 };
+
 const booksApi = new BooksApi();
-const topBooks = await booksApi.getTopBooks();
-console.log(topBooks);
 
 // async function getBestBooks() {
 //   const url = 'https://books-backend.p.goit.global/books/top-books';
@@ -28,8 +27,6 @@ console.log(topBooks);
 //       console.error(error.message);
 //     }
 //   }
-
- 
 
 function createGalleryItem(data) {
   const markup = `
