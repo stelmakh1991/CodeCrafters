@@ -13,9 +13,8 @@ async function getBestBooks() {
     console.error(error.message);
   }
 }
-async function getCategoryBooks() {
-    const url = 'https://books-backend.p.goit.global/books/category?category=selectedCategory';
-    const category = elements.list_name;
+async function getCategoryBooks(categoryName) {
+    const url = `https://books-backend.p.goit.global/books/category?category=${categoryName}`;
     try {
       const res = await fetch(url);
       const data = res.json();
