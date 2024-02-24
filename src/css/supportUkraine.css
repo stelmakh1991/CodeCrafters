@@ -1,20 +1,39 @@
+.container{
+    text-align: center;
+    display: flex;
+}
+
 .ukr-list{
     width: 335px;
-    max-height: 460px;
+    /* max-height: 460px; */
+    height: fit-content;
     background-color: rgb(79, 46, 232);
     background: linear-gradient(to bottom, #4F2EE8, #c7c8f3);
     border-radius: 12px;
 }
 
 .ukr-p{
-    text-align: center;
     color: #fff;
     padding-top: 24px;
     padding-bottom: 32px;
 }
 
 .ukr-item{
-    text-align: center;
+    /* text-align: center; */
     color: #fff;
     margin-bottom: 20px;
+}
+
+.ukr-img{
+    margin: 0 auto;
+    filter: brightness(0) invert(1);
+    width: 149px;
+    height: 55px;
+}
+
+.ukr-number{
+    color: #fff;
+    margin-right: 10px;
+    display: block;
+    /* text-align: start; */
 }
