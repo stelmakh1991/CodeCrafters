@@ -1,9 +1,12 @@
 import { BooksApi } from "./books-api";
+
 const refs = {
   bestBooksSection: document.querySelector('.bs-books-section'),
   seeMoreBtn: document.querySelector(".bs-books-see-more-btn")
 };
 const booksApi = new BooksApi();
+const topBooks = await booksApi.getTopBooks();
+console.log(topBooks);
 
 // async function getBestBooks() {
 //   const url = 'https://books-backend.p.goit.global/books/top-books';
@@ -26,8 +29,9 @@ const booksApi = new BooksApi();
 //     }
 //   }
 
-async function createGalleryItem() {
-  const data = await booksApi.getTopBooks(); 
+ 
+
+function createGalleryItem(data) {
   const markup = `
       <h1 class="bs-books-title">
         Best Sellers <span class="bs-books-title-blue">Books</span>
@@ -77,7 +81,7 @@ async function createGalleryItem() {
 }
 
 async function createMarkup() {
-  const data = await getBestBooks();
+  const data = await booksApi.getTopBooks();
   createGalleryItem(data);
 }
 createMarkup();
