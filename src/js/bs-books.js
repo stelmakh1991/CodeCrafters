@@ -25,7 +25,7 @@ async function getCategoryBooks() {
     }
   }
 
-  getCategoryBooks();
+ 
 
 function createGalleryItem(data) {
   const markup = `
