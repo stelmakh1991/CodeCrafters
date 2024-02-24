@@ -1,5 +1,6 @@
 const refs = {
   bestBooksSection: document.querySelector('.bs-books-section'),
+  seeMoreBtn: document.querySelector(".bs-books-see-more-btn")
 };
 
 async function getBestBooks() {
@@ -12,6 +13,19 @@ async function getBestBooks() {
     console.error(error.message);
   }
 }
+async function getCategoryBooks() {
+    const url = 'https://books-backend.p.goit.global/books/category?category=selectedCategory';
+    const category = elements.list_name;
+    try {
+      const res = await fetch(url);
+      const data = res.json();
+      return data;
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+  getCategoryBooks();
 
 function createGalleryItem(data) {
   const markup = `
@@ -41,7 +55,7 @@ function createGalleryItem(data) {
 
                </div> 
                 <div class="bs-books-item-thumb">
-                  <h3 class="bs-books-item-title">${book.title}</h3>
+                  <h3 class="bs-books-item-title">${book.title.slice(0, 18)}</h3>
                   <p class="bs-books-author">${book.author}</p>
                 </div>
              </a>`;
