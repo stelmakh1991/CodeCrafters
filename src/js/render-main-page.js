@@ -1,4 +1,6 @@
-import { BooksApi } from './js/books-api';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+import { BooksApi } from './books-api.js';
 
 const booksApi = new BooksApi();
 
@@ -11,27 +13,37 @@ const shoppingList = document.querySelector('.shopping-list');
 const localStorageItems = JSON.parse(localStorage.getItem('books')) || [];
 
 export async function renderBooksList() {
-  const categories = await booksApi.getCategories();
-  const markup = categories
-    .map(
-      ({ list_name }) =>
-        `<a class="category-link" href=""><li>${list_name}</li></a>`
-    )
-    .join('');
+  try {
+    const categories = await booksApi.getCategories();
+    const markup = categories
+      .map(
+        ({ list_name }) =>
+          `<a class="category-link" href=""><li>${list_name}</li></a>`
+      )
+      .join('');
 
-  categoriesList.insertAdjacentHTML('beforeend', markup);
+    categoriesList.insertAdjacentHTML('beforeend', markup);
+  } catch (error) {
+    console.log(error);
+    iziToast.error({
+      title: 'Error',
+      message: `Oops! Something went wrong. Please try again later or contact support if the issue persists. Error details: ${error.message}`,
+      position: 'topRight',
+    });
+  }
 }
 
 export async function renderTopBooks() {
-  const topBooks = await booksApi.getTopBooks();
+  try {
+    const topBooks = await booksApi.getTopBooks();
 
-  topBooks.forEach(list => {
-    const listHeaderHTML = `<h2>${list.list_name}</h2>`;
-    const showCategoryBtnHTML = `<button class="category-btn" data-category="${list.list_name}" type="button">See more</button>`;
+    topBooks.forEach(list => {
+      const listHeaderHTML = `<h2>${list.list_name}</h2>`;
+      const showCategoryBtnHTML = `<button class="category-btn" data-category="${list.list_name}" type="button">See more</button>`;
 
-    const markup = list.books
-      .map(book => {
-        return `
+      const markup = list.books
+        .map(book => {
+          return `
         <div class="book" id="${book._id}">
           <img src="${book.book_image}" alt="${book.title}">
           <h3>${book.title}</h3>
@@ -39,22 +51,31 @@ export async function renderTopBooks() {
           <p>Publisher: ${book.publisher}</p>
           <a href="${book.amazon_product_url}" target="_blank">Buy on Amazon</a>
         </div>`;
-      })
-      .join('');
+        })
+        .join('');
 
-    const listOfTopBooks = listHeaderHTML + showCategoryBtnHTML + markup;
+      const listOfTopBooks = listHeaderHTML + showCategoryBtnHTML + markup;
 
-    categoryItem.insertAdjacentHTML('beforeend', listOfTopBooks);
-  });
+      categoryItem.insertAdjacentHTML('beforeend', listOfTopBooks);
+    });
+  } catch (error) {
+    console.log(error);
+    iziToast.error({
+      title: 'Error',
+      message: `Oops! Something went wrong. Please try again later or contact support if the issue persists. Error details: ${error.message}`,
+      position: 'topRight',
+    });
+  }
 }
 
 export async function renderCategory(category) {
-  const booksList = await booksApi.getCategory(category);
+  try {
+    const booksList = await booksApi.getCategory(category);
 
-  const categoryHeaderHTML = `<h2>${category}</h2>`;
-  const markup = booksList
-    .map(book => {
-      return `
+    const categoryHeaderHTML = `<h2>${category}</h2>`;
+    const markup = booksList
+      .map(book => {
+        return `
       <div class="book" id="${book._id}">
         <img src="${book.book_image}" alt="${book.title}">
         <h3>${book.title}</h3>
@@ -62,18 +83,27 @@ export async function renderCategory(category) {
         <p>Publisher: ${book.publisher}</p>
         <a href="${book.amazon_product_url}" target="_blank">Buy on Amazon</a>
       </div>`;
-    })
-    .join('');
+      })
+      .join('');
 
-  const listOfCategoryBooks = categoryHeaderHTML + markup;
+    const listOfCategoryBooks = categoryHeaderHTML + markup;
 
-  categoryItem.insertAdjacentHTML('beforeend', listOfCategoryBooks);
+    categoryItem.insertAdjacentHTML('beforeend', listOfCategoryBooks);
+  } catch (error) {
+    console.log(error);
+    iziToast.error({
+      title: 'Error',
+      message: `Oops! Something went wrong. Please try again later or contact support if the issue persists. Error details: ${error.message}`,
+      position: 'topRight',
+    });
+  }
 }
 
 export async function renderBook(id) {
-  const book = await booksApi.getBook(id);
+  try {
+    const book = await booksApi.getBook(id);
 
-  const markup = `
+    const markup = `
   <li id="${book._id}">
     <img src="${book.book_image}" alt="${book.title}">
     <h3>${book.title}</h3>
@@ -83,7 +113,15 @@ export async function renderBook(id) {
     <button type="button">Add to shopping list</button>
   </li>`;
 
-  categoryItem.insertAdjacentHTML('beforeend', markup);
+    categoryItem.insertAdjacentHTML('beforeend', markup);
+  } catch (error) {
+    console.log(error);
+    iziToast.error({
+      title: 'Error',
+      message: `Oops! Something went wrong. Please try again later or contact support if the issue persists. Error details: ${error.message}`,
+      position: 'topRight',
+    });
+  }
 }
 
 export function onGalleryItemClick(e) {
@@ -135,15 +173,25 @@ export function onAddAndRemoveToShoppingListOnModal(e) {
 }
 
 export function renderShoppingList() {
-  const arrayOfBooks = JSON.parse(localStorage.getItem('books'));
-  if (!arrayOfBooks) return;
-  arrayOfBooks.forEach(book => renderBookFromLocalStorage(book));
+  try {
+    const arrayOfBooks = JSON.parse(localStorage.getItem('books'));
+    if (!arrayOfBooks) return;
+    arrayOfBooks.forEach(book => renderBookFromLocalStorage(book));
+  } catch (error) {
+    console.log(error);
+    iziToast.error({
+      title: 'Error',
+      message: `Oops! Something went wrong. Please try again later or contact support if the issue persists. Error details: ${error.message}`,
+      position: 'topRight',
+    });
+  }
 }
 
 export async function renderBookFromLocalStorage(id) {
-  const book = await booksApi.getBook(id);
+  try {
+    const book = await booksApi.getBook(id);
 
-  const markup = `
+    const markup = `
   <li id="${book._id}">
     <img src="${book.book_image}" alt="${book.title}">
     <h3>${book.title}</h3>
@@ -153,7 +201,15 @@ export async function renderBookFromLocalStorage(id) {
     <button type="button">Remove from shopping list</button>
   </li>`;
 
-  shoppingList.insertAdjacentHTML('beforeend', markup);
+    shoppingList.insertAdjacentHTML('beforeend', markup);
+  } catch (error) {
+    console.log(error);
+    iziToast.error({
+      title: 'Error',
+      message: `Oops! Something went wrong. Please try again later or contact support if the issue persists. Error details: ${error.message}`,
+      position: 'topRight',
+    });
+  }
 }
 
 export function onRemoveFromShoppingList(e) {
@@ -173,7 +229,7 @@ categoryItem.addEventListener('click', openModal);
 categoryItem.addEventListener('click', onAddAndRemoveToShoppingListOnModal);
 shoppingList.addEventListener('click', onRemoveFromShoppingList);
 
-// Рендер списка категорій, топ-5 книг кожної категорії та Shopping List, де рендеряться об'єкти з localeStorage
+// Рендер списка категорій, топ-5 книг кожної категорії та Shopping List, де рендеряться об'єкти з localStorage
 renderBooksList();
 renderTopBooks();
 renderShoppingList();
