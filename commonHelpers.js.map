@@ -1,1 +1,1 @@
-{"version":3,"file":"commonHelpers.js","sources":[],"sourcesContent":[],"names":[],"mappings":""}
+{"version":3,"file":"commonHelpers.js","sources":["../src/js/supportUkraine.js"],"sourcesContent":["import Swiper from 'swiper';\nimport 'swiper/css';\n\nconst swiper = new Swiper('.swiper', {\n    speed: 400,\n    spaceBetween: 100,\n  });"],"names":["Swiper"],"mappings":"svBAGe,IAAIA,EAAO,UAAW,CACjC,MAAO,IACP,aAAc,GACf,CAAA"}
