@@ -1,0 +1,28 @@
+
+.btn-up {
+    position: fixed;
+    background-color: #4F2EE8;
+    border: 8px solid rgb(142, 121, 231);
+    right: 25px;
+    bottom: 25px;
+    border-radius: 100%;
+    cursor: pointer;
+    width: 64px;
+    height: 64px;
+    
+  }
+  
+  .btn-up::before {
+    content: "";
+    text-align: center;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 30%;
+    top: 30%;
+    background-image: url("../images/material-symbols_arrow-back-ios-rounded.svg");
+    
+  }
+  .btn-up_hide {
+    display: none;
+  }
