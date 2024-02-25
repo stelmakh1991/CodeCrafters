@@ -1,10 +1,12 @@
-// import { BooksApi } from "./books-api";
+// import { BooksApi } from './books-api.js';
+// const booksApi = new BooksApi();
+
 
 const refs = {
   bestBooksSection: document.querySelector('.bs-books-section'),
 };
 
-// const booksApi = new BooksApi();
+
 
 //======================Запити (потім видалити)=====================================
 async function getBestBooks() {
@@ -88,6 +90,10 @@ async function createMarkup() {
   const data = await getBestBooks();
   createGalleryItem(data);
 }
+// async function createMarkup() {
+//   const data = await booksApi.getTopBooks();
+//   createGalleryItem(data);
+// }
 await createMarkup();
 
 //==========Рендер та визов головної сторінки Category  при кліку на кнопку See More=============
