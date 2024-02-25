@@ -61,6 +61,45 @@ p {
 .bs-books-card {
   width: 335px;
   height: 485px;
+  position: relative;
+  overflow: hidden;
+}
+.bs-category-books-card {
+  position: relative;
+  overflow: hidden;
+}
+.bs-books-overlay {
+  position: absolute;
+  top: auto;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgb(234, 198, 69);
+  transform: translatey(100%);
+  transition: transform 250ms ease-in-out;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bs-books-card:hover .bs-books-overlay{
+  transform: translatey(0); 
+}
+.bs-category-books-card:hover .bs-books-overlay{
+  transform: translatey(0); 
+}
+.bs-books-overlay-title {
+font-weight: 500;
+font-size: 14px;
+line-height: 1.29em;
+letter-spacing: -0.04em;
+text-transform: uppercase;
+color: #000000;
+}
+.bs-category-books-card {
+  width: 335px;
+  height: 485px;
 }
 .bs-books-card-img {
   display: block;
@@ -108,7 +147,21 @@ p {
 .bs-books-item-link {
   display: none;
 }
+.bs-category-title {
+  margin-top: 40px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.19em;
+  letter-spacing: -0.04em;
+  color: black;
+}
+.bs-category-list {
+  margin-top: 40px;
+}
 
+
+
+/* =================375========================*/
 @media screen and (min-width: 375px) {
   .bs-books-item-link:first-child {
     display: inline;
@@ -140,14 +193,34 @@ p {
     width: 218px;
     height: 316px;
   }
+  .bs-category-books-card {
+    width: 218px;
+    height: 316px;
+  }
   .bs-books-thumb {
     display: flex;
-    flex-basis: calc((100% - 50px) / 3);
+    
     gap: 25px;
     flex-wrap: nowrap;
   }
+  .bs-books-item-link {
+    flex-basis: calc((100% - 50px) / 3);
+  }
   .bs-books-see-more-btn {
     margin-top: 20px;
+  }
+  .bs-category-list {
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap: 25px;
+    margin-top: 40px;
+  }
+  .bs-category-item {
+    flex-basis: calc((100% - 50px) / 3);
+  }
+  .bs-category-title {
+    margin-top: 98px;
   }
 }
 /* =================1440========================*/
@@ -165,13 +238,27 @@ p {
     width: 180px;
     height: 256px;
   }
+  .bs-category-books-card {
+    width: 180px;
+    height: 256px;
+  }
   .bs-books-thumb {
     display: flex;
-    flex-basis: calc((100% - 96px) / 5);
     gap: 24px;
     flex-wrap: nowrap;
   }
+  .bs-books-item-link {
+    flex-basis: calc((100% - 96px) / 5);
+  }
   .bs-books-see-more-btn {
     margin-top: 32px;
+  }
+  .bs-category-list {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .bs-category-item {
+    flex-basis: calc((100% - 96px) / 5);
   }
 }
