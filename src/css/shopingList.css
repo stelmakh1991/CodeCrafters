@@ -1,0 +1,104 @@
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+button {
+    cursor: pointer;
+}
+
+section {
+    width: 320px;
+}
+
+.shopping-list-section {
+    margin-top: 40px;
+}
+
+.shopping-list-title {
+    font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 1.1875;
+        letter-spacing: -0.04em;
+        color: #111;
+}
+
+.shopping-list-title-span {
+    color: #4f2ee8;
+}
+
+.shopping-list {
+    padding: 0px;
+}
+
+.shopping-list-item {
+    border: 2px solid rgba(79, 46, 232, 0.4);
+    border-radius: 16px;
+    padding: 30px 24px;
+    max-width: 335px;
+    height: 170px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.shopping-list-div-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping-list-image {
+    width: 100px;
+}
+
+.shopping-list-div-descr {
+    display: flex;
+    flex-direction: column;
+}
+
+.shopping-list-item-header {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.125;
+    letter-spacing: -0.04em;
+    margin-bottom: 4px;
+}
+
+.shopping-list-item-category {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.03em;
+    color: #b4afaf;
+    margin-bottom: 8px;
+}
+
+.shopping-list-item-description {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.04em;
+    color: #111;
+}
+
+.shopping-list-item-author {
+    font-family: "DM Sans", sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: -0.04em;
+    color: #b4afaf;
+}
