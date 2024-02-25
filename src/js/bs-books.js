@@ -1,35 +1,9 @@
-// import { BooksApi } from './books-api.js';
-// const booksApi = new BooksApi();
-
+import { BooksApi } from './books-api.js';
+const booksApi = new BooksApi();
 
 const refs = {
   bestBooksSection: document.querySelector('.bs-books-section'),
 };
-
-
-
-//======================Запити (потім видалити)=====================================
-async function getBestBooks() {
-  const url = 'https://books-backend.p.goit.global/books/top-books';
-  try {
-    const res = await fetch(url);
-    const data = res.json();
-    return data;
-  } catch (error) {
-    console.error(error.message);
-  }
-}
-async function getCategoryBooks(categoryName) {
-  const url = `https://books-backend.p.goit.global/books/category?category=${categoryName}`;
-  try {
-    const res = await fetch(url);
-    const data = res.json();
-    return data;
-  } catch (error) {
-    console.error(error.message);
-  }
-}
-//===================================================================
 
 //======================Рендер та визов головної сторінки Top Sellers Books=============
 
@@ -87,13 +61,9 @@ async function createGalleryItem(data) {
 }
 
 async function createMarkup() {
-  const data = await getBestBooks();
+  const data = await booksApi.getTopBooks();
   createGalleryItem(data);
 }
-// async function createMarkup() {
-//   const data = await booksApi.getTopBooks();
-//   createGalleryItem(data);
-// }
 await createMarkup();
 
 //==========Рендер та визов головної сторінки Category  при кліку на кнопку See More=============
@@ -106,7 +76,7 @@ SeeMoreBtn.addEventListener('click', async function (event) {
 
   try {
     refs.bestBooksSection.innerHTML = '';
-    const array = await getCategoryBooks(category);
+    const array = await booksApi.getCategory(category);
     createCategoryItem(array);
   } catch (error) {
     console.error(error.message);
