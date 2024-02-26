@@ -2,13 +2,14 @@
 .btn-up {
     position: fixed;
     background-color: #4F2EE8;
-    border: 8px solid rgb(142, 121, 231);
+    border: 5px solid rgb(181, 168, 237);
     right: 25px;
     bottom: 25px;
     border-radius: 100%;
     cursor: pointer;
     width: 64px;
     height: 64px;
+    transition: opacity 0.3s ease-in-out;
     
   }
   
@@ -18,8 +19,9 @@
     position: absolute;
     width: 24px;
     height: 24px;
-    left: 30%;
-    top: 30%;
+    top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
     background-image: url("../images/material-symbols_arrow-back-ios-rounded.svg");
     
   }
