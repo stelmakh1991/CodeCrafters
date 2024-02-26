@@ -15,12 +15,55 @@
     <script type="module" crossorigin src="/CodeCrafters/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/CodeCrafters/assets/vendor-98f42928.js">
     <link rel="stylesheet" href="/CodeCrafters/assets/vendor-ed6a6904.css">
-    <link rel="stylesheet" href="/CodeCrafters/assets/index-4b9323e7.css">
+    <link rel="stylesheet" href="/CodeCrafters/assets/index-b84c8b06.css">
   </head>
 
   <body>
     <div class="wrapper">
-      
+      <header>
+    <div class="header-logo">
+        <svg class="logo-icon" width="24" height="24">
+            <use href="/svg-sprite.svg#icon-logo"></use>
+        </svg>
+        <span>Bookshelf</span>
+    </div>
+
+    <div class="home-bg">
+
+    </div>
+    <div class="home-link">
+        <span>Home</span>
+    </div>
+
+    <div class="shopping-list">
+        <span>Shopping List</span>
+        <img src="shopping-cart.png" alt="Shopping Cart">
+    </div>
+
+    <div class="toggle-button">
+        <div class="toggle-switch">
+            <input type="checkbox" id="toggle" class="toggle-checkbox">
+            <label for="toggle" class="toggle-label"></label>
+        </div>
+
+        <div class="burger-button" onclick="toggleBurger()">
+            <svg class="burger-1" width="28" height="28">
+                <use href="/svg-sprite.svg#icon-burger"></use>
+            </svg>
+        </div>
+    </div>
+
+
+    <div class="dropdown-menu">
+        <a href="#">інший вміст сайту</a>
+    </div>
+</header>
+<script>
+    function toggleBurger() {
+        document.querySelector('.burger-button').classList.toggle('active');
+        document.querySelector('.dropdown-menu').classList.toggle('active');
+    }
+</script>
 
       
       <!DOCTYPE html>
