@@ -11,7 +11,7 @@
 @import url('./supportUkraine.css');
 @import url('./shopingList.css');
 @import url('./bs-books.css');
-@import 'node_modules/normalize.css/normalize.css';
+@import '/node_modules/normalize.css/normalize.css';
 
 :root {
   font-family: "DM Sans", Inter, Avenir, Helvetica, Arial, sans-serif;
