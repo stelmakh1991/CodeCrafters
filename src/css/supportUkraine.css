@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 24px;
+    margin-bottom: 30px;
 }
 
 .ukr-text{
@@ -12,10 +13,13 @@
     font-style: normal;
     font-size: 25px;
     color: #fff;
+    margin-left: 40px;
 }
 
 .gerb{
-    padding-left: 15px;
+    padding-left: 5px;
+    width: 50px;
+    height: 32px;
 }
 
 .ukr-list{
