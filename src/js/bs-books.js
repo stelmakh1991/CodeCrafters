@@ -1,12 +1,9 @@
 import { BooksApi } from './books-api';
 const booksApi = new BooksApi();
 
-
 const refs = {
   bestBooksSection: document.querySelector('.bs-books-section'),
 };
-
-
 
 //======================Запити (потім видалити)=====================================
 async function getBestBooks() {
@@ -142,24 +139,17 @@ function createCategoryItem(books) {
 
 //========================Hover button See More===========================
 
-SeeMoreBtn.addEventListener(
-  "mouseover",
-  handlerButtonOver
-);
-SeeMoreBtn.addEventListener(
-  "mouseout",
-  handlerButtonOut
-);
-
+SeeMoreBtn.addEventListener('mouseover', handlerButtonOver);
+SeeMoreBtn.addEventListener('mouseout', handlerButtonOut);
 
 function handlerButtonOver(event) {
   if (event.target.nodeName !== 'BUTTON') return;
-  event.target.style.color = "white";
-    event.target.style.backgroundColor = "rgb(79, 46, 232)";
+  event.target.style.color = 'white';
+  event.target.style.backgroundColor = 'rgb(79, 46, 232)';
 }
 function handlerButtonOut(event) {
   if (event.target.nodeName !== 'BUTTON') return;
-  event.target.style.color = "black";
-    event.target.style.backgroundColor = "white";
+  event.target.style.color = 'black';
+  event.target.style.backgroundColor = 'white';
 }
 //=========================================================================
