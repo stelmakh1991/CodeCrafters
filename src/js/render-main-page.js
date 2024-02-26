@@ -5,12 +5,12 @@ import { BooksApi } from './books-api.js';
 const booksApi = new BooksApi();
 
 // Створюємо три змінні для додавання до них розмітки, вони мають посилатися на 3 елемента <ul> в html
-const categoriesList = document.querySelector('.categories-list');
-const categoryItem = document.querySelector('.category');
-const shoppingList = document.querySelector('.shopping-list');
+// const categoriesList = document.querySelector('.categories-list');
+// const categoryItem = document.querySelector('.category');
+// const shoppingList = document.querySelector('.shopping-list');
 
 // Створюємо масив для збереження книг у localStorage
-const localStorageItems = JSON.parse(localStorage.getItem('books')) || [];
+// const localStorageItems = JSON.parse(localStorage.getItem('books')) || [];
 
 export async function renderBooksList() {
   try {
@@ -223,13 +223,13 @@ export function onRemoveFromShoppingList(e) {
 }
 
 // Додаємо слухачі подій для рендера окремої категорії, відкриття модалки, додавання та видалення до Shopping List
-categoriesList.addEventListener('click', onGalleryItemClick);
-categoryItem.addEventListener('click', onShowCategoryBtnClick);
-categoryItem.addEventListener('click', openModal);
-categoryItem.addEventListener('click', onAddAndRemoveToShoppingListOnModal);
-shoppingList.addEventListener('click', onRemoveFromShoppingList);
+// categoriesList.addEventListener('click', onGalleryItemClick);
+// categoryItem.addEventListener('click', onShowCategoryBtnClick);
+// categoryItem.addEventListener('click', openModal);
+// categoryItem.addEventListener('click', onAddAndRemoveToShoppingListOnModal);
+// shoppingList.addEventListener('click', onRemoveFromShoppingList);
 
 // Рендер списка категорій, топ-5 книг кожної категорії та Shopping List, де рендеряться об'єкти з localStorage
-renderBooksList();
-renderTopBooks();
-renderShoppingList();
+// renderBooksList();
+// renderTopBooks();
+// renderShoppingList();
