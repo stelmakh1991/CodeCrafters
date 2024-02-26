@@ -4,6 +4,7 @@
   | default @import url()
   |============================
 */
+@import 'node_modules/modern-normalize/modern-normalize.css';
 @import url('./reset.css');
 @import url('./header.css');
 @import url('./mobMenu.css');
@@ -11,7 +12,7 @@
 @import url('./supportUkraine.css');
 @import url('./shopingList.css');
 @import url('./bs-books.css');
-@import '/node_modules/normalize.css/normalize.css';
+
 
 :root {
   font-family: "DM Sans", Inter, Avenir, Helvetica, Arial, sans-serif;
