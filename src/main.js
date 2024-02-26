@@ -9,4 +9,4 @@ import { onAddAndRemoveToShoppingListOnModal } from './js/render-main-page';
 import { renderShoppingList } from './js/render-main-page';
 import { renderBookFromLocalStorage } from './js/render-main-page';
 import { onRemoveFromShoppingList } from './js/render-main-page';
-import * from './js/shoppingList';
+
