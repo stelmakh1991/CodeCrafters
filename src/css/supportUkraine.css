@@ -1,6 +1,21 @@
-.container{
-    text-align: center;
+.ukr-header{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 24px;
+}
+
+.ukr-text{
+    font-family: sans-serif;
+    font-weight: 600;
+    line-height: normal;
+    font-style: normal;
+    font-size: 25px;
+    color: #fff;
+}
+
+.gerb{
+    padding-left: 15px;
 }
 
 .ukr-list{
@@ -12,28 +27,25 @@
     border-radius: 12px;
 }
 
-.ukr-p{
-    color: #fff;
-    padding-top: 24px;
-    padding-bottom: 32px;
-}
 
 .ukr-item{
-    /* text-align: center; */
+    display: flex;
     color: #fff;
     margin-bottom: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .ukr-img{
-    margin: 0 auto;
     filter: brightness(0) invert(1);
     width: 149px;
     height: 55px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
 }
 
 .ukr-number{
-    color: #fff;
-    margin-right: 10px;
     display: block;
-    /* text-align: start; */
+    margin-left: 40px;
 }
