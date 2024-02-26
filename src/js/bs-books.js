@@ -1,5 +1,5 @@
-// import { BooksApi } from './books-api.js';
-// const booksApi = new BooksApi();
+import { BooksApi } from './books-api';
+const booksApi = new BooksApi();
 
 const refs = {
   bestBooksSection: document.querySelector('.bs-books-section'),
