@@ -7,10 +7,9 @@ const refs = {
   bestBooksSection: document.querySelector('.bs-books-section'),
 };
 
-
 //======================Рендер та визов головної сторінки Top Sellers Books=============
 
-async function createGalleryItem(data) {
+function createGalleryItem(data) {
   const markup = `
       <h1 class="bs-books-title">
         Best Sellers <span class="bs-books-title-blue">Books</span>
@@ -18,7 +17,7 @@ async function createGalleryItem(data) {
         .map(elements => {
           return `
         <li class="bs-books-item"> 
-        <h3 class="bs-books-category-title">${elements.list_name}</h3>
+        <h3 class="bs-books-category-title dark-theme-gray">${elements.list_name}</h3>
           <div class="bs-books-thumb" data-list-id="${elements.list_name}">
             ${elements.books
               .map(book => {
@@ -39,7 +38,7 @@ async function createGalleryItem(data) {
                 </div>
                </div> 
                 <div class="bs-books-item-thumb">
-                  <h3 class="bs-books-item-title">${book.title.slice(
+                  <h3 class="bs-books-item-title dark-theme">${book.title.slice(
                     0,
                     18
                   )}</h3>
@@ -50,7 +49,7 @@ async function createGalleryItem(data) {
               .join('')}
           </div>
           <div class="bs-books-thumb-btn">
-          <button class="bs-books-see-more-btn" type="button" data-id="${
+          <button class="bs-books-see-more-btn dark-theme" type="button" data-id="${
             elements.list_name
           }">see more</button>
           </div>
@@ -62,18 +61,17 @@ async function createGalleryItem(data) {
 
   refs.bestBooksSection.insertAdjacentHTML('beforeend', markup);
 }
-
 async function createMarkup() {
   const data = await booksApi.getTopBooks();
   createGalleryItem(data);
 }
 createMarkup();
 
+
 //==========Рендер та визов головної сторінки Category  при кліку на кнопку See More=============
 
-const SeeMoreBtn = document.querySelector('.bs-list');
 
-SeeMoreBtn.addEventListener('click', async function (event) {
+refs.bestBooksSection.addEventListener('click', async function (event) {
   if (event.target.nodeName !== 'BUTTON') return;
   const category = event.target.dataset.id;
 
@@ -101,7 +99,7 @@ function createCategoryItem(books) {
                 </div>
       </div>
       <div class="bs-books-item-thumb">
-      <h3 class="bs-books-item-title">${title.slice(0, 18)}</h3>
+      <h3 class="bs-books-item-title dark-theme">${title.slice(0, 18)}</h3>
       <p class="bs-books-author">${author.slice(0, 18)}</p>
       </div>
       </a>
@@ -113,19 +111,3 @@ function createCategoryItem(books) {
   refs.bestBooksSection.insertAdjacentHTML('beforeend', bookCategoryTitle);
 }
 
-//========================Hover button See More===========================
-
-SeeMoreBtn.addEventListener('mouseover', handlerButtonOver);
-SeeMoreBtn.addEventListener('mouseout', handlerButtonOut);
-
-function handlerButtonOver(event) {
-  if (event.target.nodeName !== 'BUTTON') return;
-  event.target.style.color = 'white';
-  event.target.style.backgroundColor = 'rgb(79, 46, 232)';
-}
-function handlerButtonOut(event) {
-  if (event.target.nodeName !== 'BUTTON') return;
-  event.target.style.color = 'black';
-  event.target.style.backgroundColor = 'white';
-}
-//=========================================================================
