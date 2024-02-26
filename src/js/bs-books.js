@@ -67,7 +67,7 @@ async function createMarkup() {
   const data = await booksApi.getTopBooks();
   createGalleryItem(data);
 }
-await createMarkup();
+createMarkup();
 
 //==========Рендер та визов головної сторінки Category  при кліку на кнопку See More=============
 
