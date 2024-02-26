@@ -1,0 +1,170 @@
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+section {
+    width: 320px;
+}
+
+.shopping-list-section {
+    margin-top: 40px;
+}
+
+.shopping-list-title {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.1875;
+    letter-spacing: -0.04em;
+    color: #111;
+}
+
+.delete-btn {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    width: 28px;
+    height: 28px;
+    padding: 6px;
+    border-radius: 50%;
+    border: none;
+    background-color: #4F2EE8;
+    /* transition: filter var(--transition-time); */
+}
+
+.delete-btn-icon {
+    fill: #ffff;
+}
+
+.shopping-list-title-span {
+    color: #4f2ee8;
+}
+
+.shopping-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* padding: 0px; */
+}
+
+.shopping-list-item {
+    border: 2px solid rgba(79, 46, 232, 0.4);
+    border-radius: 16px;
+    padding: 14px;
+    max-width: 335px;
+    max-height: 170px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+}
+
+.shopping-list-div-image {
+    width: 100px;
+    height: 142px;
+    border-radius: 8px;
+}
+
+.shopping-list-image {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.shopping-list-text {
+    /* margin-left: 14px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /*justify-content: center;
+    gap: 16px; */
+    max-width: 193px;
+}
+
+.shopping-list-div-descr {
+    display: flex;
+    flex-direction: column;
+}
+
+.shopping-list-item-header {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.125;
+    letter-spacing: -0.04em;
+    margin-bottom: 4px;
+    display: inline-block;
+}
+
+.shopping-list-item-category {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.03em;
+    color: #b4afaf;
+    margin-bottom: 8px;
+}
+
+.shopping-list-item-description {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.04em;
+    color: #111;
+}
+
+.shopping-list-div-buy {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shopping-list-item-author {
+    font-family: "DM Sans", sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: -0.04em;
+    color: #b4afaf;
+}
+
+
+
+/* <li class="shop-list-item" data-id="${_id}">
+    <button type="button" class="delete-btn"><div class="delete-btn-icon"></div></button>
+
+
+
+    <div class="book-cover"><img class="book-cover-img" src="${book_image}" alt="${title}" /></div>
+
+    <div class="book-info">
+    <h2 class="book-name js-name">$ {title}</h2>
+
+<p class="book-category js-category">$ {list_name}</p>
+<p class="book-description js-description">$ {description}</p>
+<p class="book-author">$ {author}</p>
+
+<div class="link-container">
+<a class="amazon-icon" href="${amazon_product_url}" target="_blank" rel="noopener noreferrer nofollow"><div class="amazon-logo hover-items-amaz-books"></div>
+</a><a class="apple-icon" href="${buy_links[1].url}" target="_blank" rel="noopener noreferrer nofollow"><div class="apple-books-logo hover-items-amaz-books"></div></a>
+</div>
+</div>
+</li>`; */
