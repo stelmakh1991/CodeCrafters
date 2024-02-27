@@ -1,7 +1,8 @@
 import { refs } from "./bs-books";
-// import SimpleLightbox from 'simplelightbox';
-// import 'simplelightbox/dist/simple-lightbox.min.css';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 import { BooksApi } from './books-api.js';
+import { localStorageItems } from "./local-storage.js";
 
 const booksApi = new BooksApi();
 
@@ -53,6 +54,14 @@ export function openModal(e) {
     //   });
     }
   }
+
+  let book = new SimpleLightbox('.backdrop', {
+        showCounter: false,
+        captionDelay: 250,
+        captions: true,
+        captionsData: 'alt',
+        captionPosition: 'bottom',
+      });
 
 
 

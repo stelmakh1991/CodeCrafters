@@ -23,15 +23,17 @@ function createGalleryItem(data) {
               .map(book => {
                 return `
   
-              <a href="#" class="bs-books-item-link link" rel="noopener noreferrer" data-id=''>
+              <a href="#" class="bs-books-item-link link" rel="noopener noreferrer" data-id='
+              '>
         
-              <div class="bs-books-card" data-id='${
-                book._id
-              }>
+              <div class="bs-books-card" data-id=''>
                 <img
                   src="${book.book_image}"
                   alt="${book.title}"
                   class="bs-books-card-img"
+                  data-id='${
+                    book._id
+                  }'
                 />
                 <div class="bs-books-overlay">
                 <p class="bs-books-overlay-title">quick view</p>
