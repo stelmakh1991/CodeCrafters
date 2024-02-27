@@ -17,7 +17,7 @@ function createGalleryItem(data) {
         .map(elements => {
           return `
         <li class="bs-books-item"> 
-        <h3 class="bs-books-category-title dark-theme-gray">${elements.list_name}</h3>
+        <h3 class="bs-books-category-title">${elements.list_name}</h3>
           <div class="bs-books-thumb" data-list-id="${elements.list_name}">
             ${elements.books
               .map(book => {
@@ -38,7 +38,7 @@ function createGalleryItem(data) {
                 </div>
                </div> 
                 <div class="bs-books-item-thumb">
-                  <h3 class="bs-books-item-title dark-theme">${book.title.slice(
+                  <h3 class="bs-books-item-title">${book.title.slice(
                     0,
                     18
                   )}</h3>

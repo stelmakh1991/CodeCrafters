@@ -166,6 +166,17 @@ color: #ffffff;
   margin-top: 40px;
 }
 
+.categories-item {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+/*==============DARK-THEME===================*/
+.dark-theme {
+  background-color: rgb(32, 32, 36);
+  color:#ffffff
+}
+
 /* =================375========================*/
 @media screen and (min-width: 375px) {
   .bs-books-item-link:first-child {
@@ -267,13 +278,6 @@ color: #ffffff;
     flex-basis: calc((100% - 96px) / 5);
   }
 }
-.categories-item {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.dark-theme {
-  background-color: rgb(32, 32, 36);
-  color:#ffffff
-}
+
+
 
