@@ -1,8 +1,27 @@
 .categories-box {
-  height: 228px;
-  width: 335px;
-  overflow-y: scroll;
+  gap: 20px;
 }
+.box-cat {
+  width: 335px;
+  height: 228px;
+  overflow-y: scroll;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .box-cat {
+    width: 337px;
+    height: 472px;
+    margin-bottom: 98px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .box-cat {
+    width: 356px;
+    margin-bottom: 86px;
+  }
+}
+
 .btn-list {
   padding: 0;
   border: none;
@@ -11,7 +30,16 @@
   background-color: transparent;
 
   cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 112%;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.6);
 }
 .back-current {
   color: #4f2ee8;
+}
+.categories-List > .categories-item:not(:last-child) {
+  margin-bottom: 20px;
 }
