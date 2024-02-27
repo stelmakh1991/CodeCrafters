@@ -145,7 +145,6 @@ p {
 .bs-books-see-more-btn:focus {
 background-color: rgb(79, 46, 232);
 color: #ffffff;
-
 }
 .bs-books-thumb-btn {
   display: flex;

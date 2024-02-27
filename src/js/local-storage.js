@@ -3,17 +3,19 @@ export const localStorageItems = JSON.parse(localStorage.getItem('books')) || []
 
 // Додавання об'єкта книги до localStorage без реквеста на сервер
 export async function onAddAndRemoveToLocalStorageOnModal(e) {
-  const bookElement = e.target.closest('.bs-category-item');
+  const bookElement = e.target.closest('.book-modal-item');
 
   if (!bookElement) return;
 
   const id = bookElement.id;
   const title = bookElement.querySelector('h3').textContent;
-  const description = bookElement.querySelector('.bs-books-descr').textContent;
-  const author = bookElement.querySelector('.bs-books-author').textContent;
+  const description = bookElement.querySelector('.book-modal-descr').textContent;
+  const author = bookElement.querySelector('.book-modal-author').textContent;
   const bookImage = bookElement.querySelector('img').src;
   // const amazonProductUrl = bookElement.querySelector('.amazon-link').href;
-  const category = bookElement.querySelector('.bs-books-thumb').dataset.id;
+  const category = bookElement.querySelector('.book-modal-thumb').dataset.id;
+  const modalText = bookElement.querySelector('.modal-text');
+  modalText.style.display = 'none';
   const book = {
     _id: id,
     title: title,
@@ -28,6 +30,7 @@ export async function onAddAndRemoveToLocalStorageOnModal(e) {
     if (localStorageItems.find(item => item._id === id)) return;
 
     e.target.textContent = 'Remove from shopping list';
+    modalText.style.display = 'block';
     localStorageItems.push(book);
     localStorage.setItem('books', JSON.stringify(localStorageItems));
   } else if (e.target.textContent === 'Remove from shopping list') {

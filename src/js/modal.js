@@ -6,14 +6,13 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-
-
-
-
 const booksApi = new BooksApi();
 
-const backdrop = document.querySelector(".backdrop");
+
 refs.bestBooksSection.addEventListener("click", openBasicModal);
+
+let isModalOpen = false;
+
 
 async function openBasicModal(e) {
     e.preventDefault();
@@ -21,6 +20,7 @@ async function openBasicModal(e) {
       return;
     }
     e.stopPropagation();
+    refs.bestBooksSection.removeEventListener("click", openBasicModal);
     const id = e.target.dataset.id;
     try {
       const book = await booksApi.getBook(id);
@@ -29,41 +29,68 @@ async function openBasicModal(e) {
         buttonText = 'Remove from shopping list';
       }
       const markup = `
-    <li class="bs-category-item" id="${book._id}">
-    <div class="bs-books-thumb" data-id="${book.list_name}">
-    <a href="#" class="bs-books-item-link link" rel="noopener noreferrer" data-id='${book._id}'>
-    <div class="bs-category-books-card">  
-      <img src="${book.book_image}" alt="${book.title}" class="bs-books-card-img" data-id='${
+    <div class="book-modal-item" id="${book._id}">
+    
+    <button class="book-modal-close-btn" type="button">
+        <img class="book-modal-close-btn-img"   src="../images/x-close.png" width="24" height="24"/>
+    </button>
+    
+      <div class="book-modal-thumb" data-id="${book.list_name}">
+       <div class="book-modal-thumb768">
+        <div class="book-modal-card">  
+          <img src="${book.book_image}" alt="${book.title}" class="book-modal-card-img" data-id='${
         book._id
       }'/>
-      <div class="bs-books-overlay">
-                <p class="bs-books-overlay-title">quick view</p>
-                </div>
+        </div>
+        
+        <div class="book-modal-item-thumb">
+          <h3 class="book-modal-item-title">${book.title.slice(0, 25)}</h3>
+          <p class="book-modal-author">${book.author.slice(0, 25)}</p>
+          <p class="book-modal-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, iure nam facere exercitationem quibusdam cum in quasi impedit perferendis porro.</p>
+        
+        <div class="book-modal-icon">
+          <img class="book-modal-icon-amazon" src="../images/amazon1.png"/>
+          <img class="book-modal-icon-book" src="../images/book1.png"/>   
+        </div>
+        </div>
+       </div>
+        <button class="book-modal-add-btn" type="button">${buttonText}</button>
       </div>
-      <div class="bs-books-item-thumb">
-      <h3 class="bs-books-item-title">${book.title.slice(0, 18)}</h3>
-      <p class="bs-books-author">${book.author.slice(0, 18)}</p>
-      <p class="bs-books-descr">${book.author.slice(0, 18)}</p>
-      </div>
-      </a>
-      <button class="add-btn" type="button">${buttonText}</button>
-    </li>`;
+      <p class="modal-text">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
+    </div>`;
       const escapeKey = event => {
         if (event.code === 'Escape') {
           instance.close();
         }
       };
-      const instance = basicLightbox.create(markup, {
+      const closeBtn = (event) => {
+        console.log(event);
+      }
+
+      if (!isModalOpen) {
+         const instance = basicLightbox.create(markup, {
         className: 'modal',
         onShow: () => {
           document.addEventListener('keydown', escapeKey);
           document.addEventListener('click', onAddAndRemoveToLocalStorageOnModal);
+          document.body.style.overflow = 'hidden';
+          document.addEventListener("click", (e)=> {
+            if (e.target.classList.contains('book-modal-close-btn-img')) {
+                instance.close();
+              }  
+          }, { once: true });
         },
         onClose: () => {
           document.removeEventListener('keydown', escapeKey);
+          document.body.style.overflow = 'auto';
+          refs.bestBooksSection.addEventListener("click", openBasicModal);
+          isModalOpen = false;
         },
       });
       instance.show();
+      isModalOpen = true;
+      }
+
     } catch (error) {
       console.log(error);
       iziToast.error({
@@ -73,6 +100,7 @@ async function openBasicModal(e) {
       });
     }
   }
+  
 
 
 
