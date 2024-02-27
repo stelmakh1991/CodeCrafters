@@ -50,7 +50,7 @@ async function openBasicModal(e) {
           }</p>
         
         <div class="book-modal-icon">
-          <a href="${book.amazonProductUrl}" target="_blank" class="book-modal-link-amazon"><img class="book-modal-icon-amazon" src="../images/amazon1.png"/></a>
+          <a href="${book.amazon_product_url}" target="_blank" class="book-modal-link-amazon"><img class="book-modal-icon-amazon" src="../images/amazon1.png"/></a>
           <a href="${book.buy_links[1].url}" target="_blank" class="book-modal-link-apple"><img class="book-modal-icon-apple" src="../images/book1.png"/></a>  
         </div>
         </div>
