@@ -1,5 +1,5 @@
 body{
- background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, rgb(79, 46, 232) 18.02733987569809%, rgb(255, 255, 255) 100%);
+ background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, rgb(255, 255, 255) 18.02733987569809%, rgb(255, 255, 255) 100%);
  margin: 0px;
  min-height: 812px;
 }
@@ -32,7 +32,6 @@ header {
   margin: 1px 0px 1px 8px;
 }
 
-<<<<<<< Updated upstream
 
 
 header {
@@ -60,14 +59,11 @@ header {
   margin: 2px 8px 2px 0px;
 }
 
-=======
->>>>>>> Stashed changes
 .logo img {
   height: 30px;
   margin-right: 10px;
 }
 
-<<<<<<< Updated upstream
 /* --------- */
 
 .home-link {
@@ -87,16 +83,7 @@ header {
 
 .home-bg {}
 
-/* ------- */
-
-.shopping-list {
-  display: flex;
-  align-items: center;
-  display: none;
-}
-
 /* --------- */
-=======
 .header-menu{
   position: absolute;
   margin-top: 300px;
@@ -117,7 +104,7 @@ header {
 }
 
 .shopping-list {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   margin-right: 87px;
@@ -128,7 +115,6 @@ header {
   margin-top: 24px;
 }
 
->>>>>>> Stashed changes
 .toggle-switch {
   display: inline-block;
   position: relative;
@@ -161,11 +147,8 @@ header {
   transform: translateX(20px);
 }
 
-<<<<<<< Updated upstream
 /* --------- */
 
-=======
->>>>>>> Stashed changes
 .burger-button {
   cursor: pointer;
   display: inline-block;
@@ -237,24 +220,19 @@ header {
 
 @media only screen and (min-width: 768px) {
   .home-link {
-<<<<<<< Updated upstream
     position: relative;
     margin: 0;
     margin-right: 20px;
     left: 0;
     all: unset;
-=======
     all: unset;
     position: relative;
     margin-right: 24px;
->>>>>>> Stashed changes
   }
 
   .burger-button {
     display: none;
   }
-<<<<<<< Updated upstream
-=======
 
   .shopping-list{
     position: relative;
@@ -270,7 +248,6 @@ header {
     display: flex;
     align-items: center;
   }
->>>>>>> Stashed changes
 }
 
 @media only screen and (min-width: 1440px) {}
