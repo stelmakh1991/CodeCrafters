@@ -3,7 +3,7 @@ import { BooksApi } from './books-api.js';
 
 const booksApi = new BooksApi();
 
-const refs = {
+export const refs = {
   bestBooksSection: document.querySelector('.bs-books-section'),
 };
 
