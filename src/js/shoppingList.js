@@ -17,6 +17,12 @@ async function getBooksAndAddToLocalStorage(array) {
     localStorage.setItem('booksArray', JSON.stringify(localStorageArray));
   } catch (error) {
     console.error('Error fetching books:', error);
+    // Optionally, you can handle the error here, e.g., display an error message to the user
+    iziToast.error({
+      title: 'Error',
+      message: `Oops! Something went wrong while fetching books. Please try again later or contact support if the issue persists.`,
+      position: 'topRight',
+    });
   }
 }
 
@@ -33,11 +39,13 @@ getBooksAndAddToLocalStorage(booksToFetch);
 // ===================== Get from local storage ========================================================================
 
 const shoppingList = document.querySelector('.shopping-list');
+const placeholder = document.querySelector('.shop-list-placeholder');
+const localStorageItems = JSON.parse(localStorage.getItem('booksArray')) || [];
 
 // Рендер Shopping list без реквеста на сервер
 export function renderShoppingListFromLocalStorage() {
+  // const localStorageItems = JSON.parse(localStorage.getItem('booksArray')) || [];
   try {
-    const localStorageItems = JSON.parse(localStorage.getItem('booksArray')) || [];
     if (!localStorageItems) return;
     localStorageItems.forEach(book =>
       renderBookFromLocalStorageWithoutFetch(book)
@@ -82,3 +90,41 @@ export function renderBookFromLocalStorageWithoutFetch(book) {
 }
 
 renderShoppingListFromLocalStorage();
+
+function toggleVisibility() {
+    if (localStorageItems.length === 0) {
+        placeholder.style.display = 'block'; // Display placeholder if no items left
+    } else {
+        placeholder.style.display = 'none'; // Hide placeholder if items exist
+    }
+}
+
+toggleVisibility();
+
+// const deleteBtn = document.querySelector('.delete-btn');
+
+const deleteBtns = document.querySelectorAll('.delete-btn');
+
+deleteBtns.forEach(btn => {
+    btn.addEventListener('click', onRemoveFromShoppingList);
+});
+
+function onRemoveFromShoppingList(e) {
+    const btn = e.currentTarget; // Current button clicked
+    const listItem = btn.closest('.shopping-list-item'); // Find the closest shopping list item
+    const id = listItem.dataset.id; // Get the ID from the data attribute
+    const updatedItems = localStorageItems.filter(item => item._id !== id); // Filter out the item with matching ID
+    localStorage.setItem('booksArray', JSON.stringify(updatedItems)); // Update local storage
+    listItem.remove(); // Remove the list item from the DOM
+    
+    // Update localStorageItems array
+    const index = localStorageItems.findIndex(item => item._id === id);
+    localStorageItems.splice(index, 1);
+    
+    // Check if updatedItems array is empty and remove the entire array from local storage if it is
+    if (updatedItems.length === 0) {
+        localStorage.removeItem('booksArray');
+  }
+  
+  toggleVisibility();
+}
