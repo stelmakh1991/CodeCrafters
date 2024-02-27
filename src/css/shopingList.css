@@ -32,7 +32,7 @@ section {
 }
 
 .container {
-    display: none;
+    /* display: none; */
     width: 375px;
     margin-left: auto;
     margin-right: auto;
@@ -116,7 +116,8 @@ section {
 }
 
 .shopping-list {
-    display: none;
+    /* display: none; */
+    display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 0px;

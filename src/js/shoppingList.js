@@ -1,5 +1,8 @@
 import axios from 'https://cdn.skypack.dev/axios';
 
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+
 async function getBooksAndAddToLocalStorage(array) {
   const localStorageArray = [];
 
@@ -32,6 +35,9 @@ const booksToFetch = [
   '643282b1e85766588626a0b2',
   '643282b1e85766588626a086',
   '643282b1e85766588626a085',
+  '643282b1e85766588626a085',
+  '643282b1e85766588626a0dc',
+  '643282b1e85766588626a086',
 ];
 
 getBooksAndAddToLocalStorage(booksToFetch);
@@ -41,6 +47,7 @@ getBooksAndAddToLocalStorage(booksToFetch);
 const shoppingList = document.querySelector('.shopping-list');
 const placeholder = document.querySelector('.shop-list-placeholder');
 const localStorageItems = JSON.parse(localStorage.getItem('booksArray')) || [];
+const paginationContainer = document.querySelector('.tui-pagination');
 
 // Рендер Shopping list без реквеста на сервер
 export function renderShoppingListFromLocalStorage() {
@@ -65,7 +72,7 @@ export function renderBookFromLocalStorageWithoutFetch(book) {
   const markup = `<li class="shopping-list-item" data-id="${book._id}">
 
         <button type="button" class="delete-btn" title="Delete"> 
-        <div class="delete-btn-icon"> </div> </div> </button> 
+        <div class="delete-btn-icon"> </div> </button> 
 
         <div class="shopping-list-div-image"> <img class="shopping-list-image" src="${book.book_image}" alt="${book.title}"> </div> 
 
@@ -89,6 +96,8 @@ export function renderBookFromLocalStorageWithoutFetch(book) {
   shoppingList.insertAdjacentHTML('beforeend', markup);
 }
 
+// ============================ Placeholder =======================================
+
 renderShoppingListFromLocalStorage();
 
 function toggleVisibility() {
@@ -101,30 +110,81 @@ function toggleVisibility() {
 
 toggleVisibility();
 
-// const deleteBtn = document.querySelector('.delete-btn');
+// =========================== Pagination ============================================
 
-const deleteBtns = document.querySelectorAll('.delete-btn');
-
-deleteBtns.forEach(btn => {
-    btn.addEventListener('click', onRemoveFromShoppingList);
+const pagination = new Pagination(paginationContainer, {
+  totalItems: localStorageItems.length, // Set the total number of items
+  itemsPerPage: getWindowWidth() <= 767 ? 4 : 3,
+  visiblePages: 3, // Set the number of visible pages
+  page: 1, // Set the initial page
+    template: {
+        page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+        currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+        moveButton:
+             '<a href="#" class="tui-page-btn tui-{{type}}">' +
+                 '<span class="tui-ico-{{type}}">{{type}}</span>' +
+             '</a>',
+        disabledMoveButton:
+             '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+                 '<span class="tui-ico-{{type}}">{{type}}</span>' +
+             '</span>',
+       moreButton:
+             '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+                 '<span class="tui-ico-ellip">...</span>' +
+             '</a>'
+     }
 });
 
-function onRemoveFromShoppingList(e) {
-    const btn = e.currentTarget; // Current button clicked
-    const listItem = btn.closest('.shopping-list-item'); // Find the closest shopping list item
-    const id = listItem.dataset.id; // Get the ID from the data attribute
-    const updatedItems = localStorageItems.filter(item => item._id !== id); // Filter out the item with matching ID
-    localStorage.setItem('booksArray', JSON.stringify(updatedItems)); // Update local storage
-    listItem.remove(); // Remove the list item from the DOM
-    
-    // Update localStorageItems array
-    const index = localStorageItems.findIndex(item => item._id === id);
-    localStorageItems.splice(index, 1);
-    
-    // Check if updatedItems array is empty and remove the entire array from local storage if it is
-    if (updatedItems.length === 0) {
-        localStorage.removeItem('booksArray');
-  }
-  
-  toggleVisibility();
+function getWindowWidth() {
+  return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 }
+
+// Handle page change event
+pagination.on('afterMove', function (eventData) {
+  renderBooks(eventData.page); // Render books based on the current page
+});
+
+function renderBooks(page) {
+  shoppingList.innerHTML = ''; // Clear the shopping list
+  const startIndex = (page - 1) * pagination._options.itemsPerPage;
+  const endIndex = startIndex + pagination._options.itemsPerPage;
+  const booksToRender = localStorageItems.slice(startIndex, endIndex);
+
+  booksToRender.forEach(book => {
+    renderBookFromLocalStorageWithoutFetch(book);
+  });
+}
+
+// =================== Remove from shopping list and local storage =============================
+
+// Видалення елемента з Shopping List
+export function onRemoveFromShoppingListAndLocalStorage(e) {
+  const target = e.target;
+
+  // Check if the clicked element is the PNG image
+  if (target.classList.contains('delete-btn-icon') || target.classList.contains('delete-btn')) {
+    const button = target.closest('.delete-btn');
+    const id = button.parentNode.dataset.id; // Get the ID from the parent element
+    const index = localStorageItems.findIndex(item => item._id === id);
+
+    if (index !== -1) {
+      localStorageItems.splice(index, 1);
+      localStorage.setItem('booksArray', JSON.stringify(localStorageItems));
+      renderBooks(pagination.getCurrentPage()); // Render books for the current page
+      pagination.reset(localStorageItems.length); // Reset pagination with updated total items
+    }
+
+    button.parentNode.remove(); // Remove the parent element (li)
+    toggleVisibility();
+
+    if (localStorageItems.length === 0) {
+      localStorage.removeItem('booksArray');
+      paginationContainer.style.display = 'none';
+    }
+  }
+}
+
+shoppingList.addEventListener('click', onRemoveFromShoppingListAndLocalStorage);
+
+// Initial rendering
+renderBooks(1); // Render books for the first page
