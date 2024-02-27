@@ -58,13 +58,15 @@ import k from"https://cdn.skypack.dev/axios";import{a as c}from"./assets/vendor-
           <div class="bs-books-thumb" data-list-id="${e.list_name}">
             ${e.books.map(o=>`
   
-              <a href="#" class="bs-books-item-link link" rel="noopener noreferrer" data-id='${o._id}'>
+              <a href="#" class="bs-books-item-link link" rel="noopener noreferrer" data-id='
+              '>
         
-              <div class="bs-books-card">
+              <div class="bs-books-card" data-id=''>
                 <img
                   src="${o.book_image}"
                   alt="${o.title}"
                   class="bs-books-card-img"
+                  data-id='${o._id}'
                 />
                 <div class="bs-books-overlay">
                 <p class="bs-books-overlay-title">quick view</p>
