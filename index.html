@@ -15,57 +15,101 @@
     <script type="module" crossorigin src="/CodeCrafters/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/CodeCrafters/assets/vendor-ecab3960.js">
     <link rel="stylesheet" href="/CodeCrafters/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/CodeCrafters/assets/index-1f4752c2.css">
+    <link rel="stylesheet" href="/CodeCrafters/assets/index-25a4a381.css">
   </head>
 
   <body>
     <div class="wrapper">
-      <header>
-    <div class="header-logo">
+      <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header</title>
+    <link rel="stylesheet" href="/src/css/header.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-logo">
         <svg class="logo-icon" width="24" height="24">
-            <use href="/svg-sprite.svg#icon-logo"></use>
+          <use href="/svg-sprite.svg#icon-logo"></use>
         </svg>
         <span>Bookshelf</span>
-    </div>
+      </div>
 
-    <div class="home-bg">
+      <div class="header-menu">
+        <div class="home-link">
+          <span>Home</span>
+        </div>
 
-    </div>
-    <div class="home-link">
-        <span>Home</span>
-    </div>
+        <div class="shopping-list">
+          <span>Shopping List</span>
+          <svg class="logo-shop" width="20" height="20">
+            <use href="/svg-sprite.svg#icon-bag"></use>
+          </svg>
+        </div>
+      </div>
 
-    <div class="shopping-list">
-        <span>Shopping List</span>
-        <img src="shopping-cart.png" alt="Shopping Cart">
-    </div>
-
-    <div class="toggle-button">
+      <div class="toggle-button">
         <div class="toggle-switch">
-            <input type="checkbox" id="toggle" class="toggle-checkbox">
-            <label for="toggle" class="toggle-label"></label>
+          <input type="checkbox" id="toggle" class="toggle-checkbox" />
+          <label for="toggle" class="toggle-label"></label>
         </div>
 
         <div class="burger-button" onclick="toggleBurger()">
-            <svg class="burger-1" width="28" height="28">
-                <use href="/svg-sprite.svg#icon-burger"></use>
-            </svg>
+          <svg class="burger-1" width="28" height="28">
+            <use href="/svg-sprite.svg#icon-burger"></use>
+          </svg>
         </div>
-    </div>
+      </div>
 
-
-    <div class="dropdown-menu">
+      <div class="dropdown-menu">
         <a href="#">інший вміст сайту</a>
-    </div>
-</header>
-<script>
-    function toggleBurger() {
+      </div>
+    </header>
+    <script>
+      function toggleBurger() {
         document.querySelector('.burger-button').classList.toggle('active');
         document.querySelector('.dropdown-menu').classList.toggle('active');
-    }
-</script>
+      }
+    </script>
+  </body>
+</html>
 
-      
+      <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mobMenu.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5.1.2/dist/basicLightbox.min.css">
+</head>
+
+<body>
+
+    <div class="container book-info" id="bookModal">
+        <img class="modal-image" alt="Book Cover">
+        <h2 class="modal-title"></h2>
+        <p class="modal-author"></p>
+        <p class="modal-text"></p>
+        <ul>
+            <li><a href="?" class="shopping-link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAAUCAYAAAA+wTUXAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAA5SURBVHgB7c8BDQAgEMPAQRAOysf7aC+pgK62NzBrphuYHSCnKZymcJrCaQqnKZymcJrCaYozvcB8KUsII29r7HcAAAAASUVORK5CYII=" alt="Amazon link" width="62"
+                        height="19"></a></li>
+            <li><a href="?" class="shopping-image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAYAAACcuBHKAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOASURBVHgB7VdLaBRBEH3Vm91V/KwK/mIOcQ/GXPwgQQ8qSLz4QUWEXMSLIHjLxd/FY0CCSrxoQJEc1VMgIDkYEURCVEyCEA8aI35WQ0STYEyyO132zOzOdk9mZicQbykYZrrnddXrV101u8CiuUZRL7kjvcWShb0EWiuAlORovG6CwFIiz+BviaT1ks5gCPMhwfdQx0g+UI/bsXA2TLP5RjqPEVQiwe3YyiLZC6JMcQbBXMPmI3F5Im6gs/kBHVE1ZwmlHqt1GWdtMM8K85G4pMroQ2ZsJSpHEDqicCd1kiXVqguQdlLNe+mZfe/C5kLwW6z29CE9rkGCmA4oKWw5wAH30rMfEzYXjhdH9LhGOhTLLAXJXLUCyB4FVS1TAws8PgJ8eaJYCxO3aT9oRRZIpMBTOWD0FfAnh4AMVYeSEExpZh++4TJoRzOQXqn5UPbjNWT3aWDiE7C8BnTwLqhmv4mZGQf3XQMPtqkd6o5puRFXH0hLjbX8U+1x0O6rBgHP1u9Sge8rnHJyrNMg4Fk6A9rXAsqegu5XMItQJcA+eZfVIMqoeg84Uw+sqY/EYcl69yyUTJopN0lYtmcqVzbHKMPV2ypj2Dlvjk92Q4ST8E5vEWxLXZEGVVVCuH5luTFIcDgJVyYydhArQEUQzBREKQFL2M2iiOJ46YhBdA6JSCXsd17gmG05Nglt7OsvPiXILdqS41hKxMSUlCAfIQQowZpsJFHZ4mBYOzts84goURtIPL+DGY8EGWfC7zbgYPoWl2z6N3hs2Cly2rQzGFPIg39+UNhx0Lo6YOmqIlGa06BCSSgV2KBpy/h1ALLrCjj3RjkquJNLVkHsPgfReNHbluy5Ae69Df77y+tGNllx4tb8qoMltL6m1r3tBPo6ysFd18DUOOTTVvWYcKZldwvk85tFCHl3/twPq22vUiRjpI2jzoRSYtILZDuaHNPfwm+yRxGp3Qfuf6Q+3wkEm0rx9GTZJzmbnQklYUnKGRVc8WAqwPtnTuu2K0nTylhq9z+vBTrVgY8+mmVLsOjSP7mxLvvLG/ATEAFj7w7u0eOSb1+Uv7BhSD3U4X8ZYSTV+n0zwpRwsmbJJiVZwW3hC3xJTDDR4bm8AowvbajNz8L+EZnFghkPsqCm9PXcO8Qh4S1r3lhvCdHALKvViUrO52+gXaEq/3kSNMoJfhEUfNH89g83+MD9ZjdiQAAAAABJRU5ErkJggg==" alt="Amazon book" width="32"
+                        height="32"></a></li>
+        </ul>
+        <button class="modal-button" id="toggleShoppingList">Add to Shopping List</button>
+        <button class="modal-close"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAWFJREFUWEe1l9sNwjAMRd1NYBPYBDZhE8QksAlsAlxUozTEz5r+IErwOXFcp5loeW2I6NHd++vXaY4O8JWIWODyvn8qJu9mBsJiknt8sgDgGMAXBlRKtPCWsWWB52C2VRIjOOO+An0GqjKhwTHBr4A1MLMcWkxMEDVw4yXAjQMRnYXCiy6HCw5WK1Al4YaPBNZKhOCSQFYiDNcEohIpuCXglbg1HW5Uw59ql7pqX4SjcdbTgfYtXSrckwEOrEmk4REBazl6CXPm/AfPErTBPZlww6MZwHir2qMd86cTKvVkwlMbmHcJrJn34u5MeASi8FAmLAELjoJDH0jvopqAB84dzmpW4vuEJBCBe5qVWBMjgQw8LdELrIGnJFqBCnhYggUq4V6JY/tSep8fp/B+rrVOx4uuejBB7NDGIshoj6h6MKmAa8uxOJhwN0Mt4IfP+hjpjf6M2OiYfABe1EA0WNn4F0EsgGGeftv2AAAAAElFTkSuQmCC" alt="Close" width="14" height="14"></button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.1.2/dist/basicLightbox.min.js"></script>
+    <script src="local-storage.js"></script>
+    <script src="openModal.js"></script>
+</body>
+
+</html>
       <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -87,6 +131,17 @@
           Shopping <span class="shopping-list-title-span">List</span>
         </h1>
 
+        <div class="shop-list-placeholder container-book">
+          <p class="shop-list-placeholder-text">
+            This page is empty, add some books and proceed to order.
+          </p>
+          <picture>
+            <source srcset="../png/placeholder-1x.png 1x, ../png/placeholder-2x.png 2x, ../png/placeholder-3x.png 3x" media="(min-width: 768px)" />
+            <source srcset="../png/placeholder-mob-1x.png 1x, ../png/placeholder-mob-2x.png 2x, ../png/placeholder-mob-3x.png 3x" media="(min-width: 320px)" />
+            <img class="shop-list-placeholder-img" src="../png/placeholder-mob-1x.png" alt="books" />
+          </picture>
+        </div>
+
         <ul class="shopping-list"></ul>
       </div>
     </section>
@@ -95,22 +150,10 @@
   </body>
 </html>
 
-      <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/bs-books.css" />
-  </head>
-  <body>
-    <section class="bs-books-section dark-theme"></section>
-    
-    
-  </body>
-</html>
 
-      <!DOCTYPE html>
+      <aside class="sidebar">
+        <div class="sidebar-content">
+          <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -144,10 +187,6 @@
   </body>
 </html>
 
-
-      <aside class="sidebar">
-        <div class="sidebar-content">
-          
           <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -287,6 +326,22 @@
 
         </div>
       </aside>
+
+      <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bs-books.css" />
+  </head>
+  <body>
+    <section class="bs-books-section"></section>
+    
+    
+  </body>
+</html>
+
     </div>
 
     
