@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const modalContent = document.querySelector('.book-info').innerHTML;
   const modal = basicLightbox.create(modalContent, {
+
     onShow: (instance) => {
 //заборонити прокручування фону
       document.body.style.overflow = 'hidden';
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         onAddAndRemoveToLocalStorageOnModal(event);
       });
     },
+
     onClose: (instance) => {
 //відновити можливість прокручування фону
       document.body.style.overflow = 'auto';
@@ -31,8 +33,17 @@ document.addEventListener('DOMContentLoaded', function () {
       const toggleShoppingListBtn = document.getElementById('toggleShoppingList');
       toggleShoppingListBtn.removeEventListener('click', toggleShoppingList);
     }
+
   });
 
+
+
+
+
+
+
+
+  
 //додавання прослуховувача події для відкриття модального вікна
   document.addEventListener('click', function (event) {
     if (event.target.matches('#toggleModal')) {
