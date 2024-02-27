@@ -3,6 +3,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { BooksApi } from './books-api.js';
 import { localStorageItems } from "./local-storage.js";
+// import * as basicLightbox from 'basiclightbox';
 
 const booksApi = new BooksApi();
 
@@ -55,14 +56,11 @@ export function openModal(e) {
     }
   }
 
-  let book = new SimpleLightbox('.backdrop', {
-        showCounter: false,
-        captionDelay: 250,
-        captions: true,
-        captionsData: 'alt',
-        captionPosition: 'bottom',
-      });
+  const instance = basicLightbox.create(
+	document.querySelector('template')
+)
 
+instance.show()
 
 
 
