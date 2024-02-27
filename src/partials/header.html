@@ -1,144 +1,56 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<header>
-    <div class="header-logo">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header</title>
+    <link rel="stylesheet" href="/src/css/header.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-logo">
         <svg class="logo-icon" width="24" height="24">
-            <use href="/svg-sprite.svg#icon-logo"></use>
+          <use href="/svg-sprite.svg#icon-logo"></use>
         </svg>
         <span>Bookshelf</span>
-    </div>
-=======
-<!DOCTYPE html>
-<html lang="en">
->>>>>>> Stashed changes
+      </div>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Header</title>
-    <link rel="stylesheet" href="/src/css/header.css" />
-</head>
-
-<body>
-    <header>
-        <div class="header-logo">
-            <svg class="logo-icon" width="24" height="24">
-                <use href="/"></use>
-            </svg>
-            <span>Bookshelf</span>
-        </div>
-    
-        <div class="home-bg">
-    
-        </div>
+      <div class="header-menu">
         <div class="home-link">
-            <span>Home</span>
+          <span>Home</span>
         </div>
-    
+
         <div class="shopping-list">
-            <span>Shopping List</span>
-            <img src="shopping-cart.png" alt="Shopping Cart">
+          <span>Shopping List</span>
+          <svg class="logo-shop" width="20" height="20">
+            <use href="/svg-sprite.svg#icon-bag"></use>
+          </svg>
         </div>
-    
-        <div class="toggle-button">
-            <div class="toggle-switch">
-                <input type="checkbox" id="toggle" class="toggle-checkbox">
-                <label for="toggle" class="toggle-label"></label>
-            </div>
-    
-            <div class="burger-button" onclick="toggleBurger()">
-                <svg class="burger-1" width="28" height="28">
-                    <use href="/svg-sprite.svg#icon-burger"></use>
-                </svg>
-            </div>
+      </div>
+
+      <div class="toggle-button">
+        <div class="toggle-switch">
+          <input type="checkbox" id="toggle" class="toggle-checkbox" />
+          <label for="toggle" class="toggle-label"></label>
         </div>
-    
-    
-        <div class="dropdown-menu">
-            <a href="#">інший вміст сайту</a>
+
+        <div class="burger-button" onclick="toggleBurger()">
+          <svg class="burger-1" width="28" height="28">
+            <use href="/svg-sprite.svg#icon-burger"></use>
+          </svg>
         </div>
+      </div>
+
+      <div class="dropdown-menu">
+        <a href="#">інший вміст сайту</a>
+      </div>
     </header>
     <script>
-        function toggleBurger() {
-            document.querySelector('.burger-button').classList.toggle('active');
-            document.querySelector('.dropdown-menu').classList.toggle('active');
-        }
-    </script>
-</body>
-
-<<<<<<< Updated upstream
-
-    <div class="dropdown-menu">
-        <a href="#">інший вміст сайту</a>
-    </div>
-</header>
-<script>
-    function toggleBurger() {
+      function toggleBurger() {
         document.querySelector('.burger-button').classList.toggle('active');
         document.querySelector('.dropdown-menu').classList.toggle('active');
-    }
-</script>
-=======
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Header</title>
-    <link rel="stylesheet" href="/src/css/header.css" />
-</head>
-
-<body>
-    <header>
-        <div class="header-logo">
-            <svg class="logo-icon" width="24" height="24">
-                <use href="/svg-sprite.svg#icon-logo"></use>
-            </svg>
-            <span>Bookshelf</span>
-        </div>
-
-        <div class="header-menu">
-            <div class="home-link">
-                <span>Home</span>
-            </div>
-    
-            <div class="shopping-list">
-                <span>Shopping List</span>
-                <svg class="logo-shop" width="20" height="20">
-                    <use href="/svg-sprite.svg#icon-bag"></use>
-                </svg>   
-            </div>
-        </div>
-   
-        <div class="toggle-button">
-            <div class="toggle-switch">
-                <input type="checkbox" id="toggle" class="toggle-checkbox">
-                <label for="toggle" class="toggle-label"></label>
-            </div>
-    
-            <div class="burger-button" onclick="toggleBurger()">
-                <svg class="burger-1" width="28" height="28">
-                    <use href="/svg-sprite.svg#icon-burger"></use>
-                </svg>
-            </div>
-        </div>
-    
-    
-        <div class="dropdown-menu">
-            <a href="#">інший вміст сайту</a>
-        </div>
-    </header>
-    <script>
-        function toggleBurger() {
-            document.querySelector('.burger-button').classList.toggle('active');
-            document.querySelector('.dropdown-menu').classList.toggle('active');
-        }
+      }
     </script>
-</body>
-
+  </body>
 </html>
->>>>>>> Stashed changes
-=======
-</html>
->>>>>>> Stashed changes
