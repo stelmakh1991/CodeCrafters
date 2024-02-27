@@ -12,7 +12,8 @@ export async function onAddAndRemoveToLocalStorageOnModal(e) {
   const description = bookElement.querySelector('.book-modal-descr').textContent;
   const author = bookElement.querySelector('.book-modal-author').textContent;
   const bookImage = bookElement.querySelector('img').src;
-  // const amazonProductUrl = bookElement.querySelector('.amazon-link').href;
+  const amazonProductUrl = bookElement.querySelector('.book-modal-link-amazon').href;
+  const appleProductUrl = bookElement.querySelector('.book-modal-link-apple').href;
   const category = bookElement.querySelector('.book-modal-thumb').dataset.id;
   const modalText = bookElement.querySelector('.modal-text');
   modalText.style.display = 'none';
@@ -23,7 +24,8 @@ export async function onAddAndRemoveToLocalStorageOnModal(e) {
     author: author,
     book_image: bookImage,
     category: category, 
-    // amazon_product_url: amazonProductUrl,
+    amazon_product_url: amazonProductUrl,
+    apple_product_url: appleProductUrl,
   };
 
   if (e.target.textContent === 'Add to shopping list') {

@@ -46,11 +46,12 @@ async function openBasicModal(e) {
         <div class="book-modal-item-thumb">
           <h3 class="book-modal-item-title">${book.title.slice(0, 25)}</h3>
           <p class="book-modal-author">${book.author.slice(0, 25)}</p>
-          <p class="book-modal-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, iure nam facere exercitationem quibusdam cum in quasi impedit perferendis porro.</p>
+          <p class="book-modal-descr">${book.description
+          }</p>
         
         <div class="book-modal-icon">
-          <img class="book-modal-icon-amazon" src="../images/amazon1.png"/>
-          <img class="book-modal-icon-book" src="../images/book1.png"/>   
+          <a href="${book.amazonProductUrl}" target="_blank" class="book-modal-link-amazon"><img class="book-modal-icon-amazon" src="../images/amazon1.png"/></a>
+          <a href="${book.buy_links[1].url}" target="_blank" class="book-modal-link-apple"><img class="book-modal-icon-apple" src="../images/book1.png"/></a>  
         </div>
         </div>
        </div>
@@ -63,9 +64,6 @@ async function openBasicModal(e) {
           instance.close();
         }
       };
-      const closeBtn = (event) => {
-        console.log(event);
-      }
 
       if (!isModalOpen) {
          const instance = basicLightbox.create(markup, {
@@ -78,7 +76,9 @@ async function openBasicModal(e) {
             if (e.target.classList.contains('book-modal-close-btn-img')) {
                 instance.close();
               }  
-          }, { once: true });
+          });
+        //   document.querySelector(".modal-text").style.display = 'none';
+        //   console.log(document.querySelector(".modal-text"));
         },
         onClose: () => {
           document.removeEventListener('keydown', escapeKey);
