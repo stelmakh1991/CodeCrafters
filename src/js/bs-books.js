@@ -38,7 +38,7 @@ function createGalleryItem(data) {
                 </div>
                </div> 
                 <div class="bs-books-item-thumb">
-                  <h3 class="bs-books-item-title">${book.title.slice(
+                  <h3 class="bs-books-item-title dark-theme">${book.title.slice(
                     0,
                     18
                   )}</h3>

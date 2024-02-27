@@ -171,11 +171,7 @@ color: #ffffff;
   gap: 24px;
   flex-wrap: wrap;
 }
-/*==============DARK-THEME===================*/
-.dark-theme {
-  background-color: rgb(32, 32, 36);
-  color:#ffffff
-}
+
 
 /* =================375========================*/
 @media screen and (min-width: 375px) {
@@ -278,6 +274,10 @@ color: #ffffff;
     flex-basis: calc((100% - 96px) / 5);
   }
 }
-
+/*==============DARK-THEME===================*/
+.dark-theme {
+  background-color: rgb(32, 32, 36);
+  color:#ffffff
+}
 
 
