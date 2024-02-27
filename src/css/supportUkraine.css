@@ -23,9 +23,10 @@
 }
 
 .ukr-list{
-    width: 335px;
-    /* max-height: 460px; */
+    width: 376px;
+    /* max-height: 474px; */
     height: fit-content;
+    /* height: fit-content; */
     background-color: rgb(79, 46, 232);
     background: linear-gradient(to bottom, #4F2EE8, #c7c8f3);
     border-radius: 12px;
@@ -52,4 +53,10 @@
 .ukr-number{
     display: block;
     margin-left: 40px;
+}
+
+.show-more-button{
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
