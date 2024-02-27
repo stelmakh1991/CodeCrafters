@@ -1,0 +1,73 @@
+.book-info {
+    width: 579px;
+    height: 465px;
+    padding-top: 40px;
+    padding-left: 40px;
+    border-radius: 18px;
+    border: 2px solid rgba(255, 255, 255, 1);
+    font-family: 'DM Sans';
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.modal-image {
+    width: 579px;
+    height: 465px;
+    border-radius: 18px;
+    border: 2px solid;
+    color: transparent;
+}
+
+.modal-title {
+    width: 192px;
+    height: 28px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.04em;
+    color: rgba(255, 255, 255, 1);
+    padding-left: 24px;
+}
+
+.modal-author {
+    width: 92px;
+    height: 18px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    padding-top: 8px;
+    padding-left: 24px;
+}
+
+.modal-text {
+    width: 279px;
+    height: 70px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.shopping-link {
+    width: 62px;
+    height: 19px;
+    color: rgba(255, 255, 255, 1);
+    padding-top: 26.5px;
+    margin-top: 6.5px;
+    margin-left: 1px;
+    padding-left: 24px;
+}
+
+.shopping-image {
+    width: 33px;
+    height: 32px;
+}
+
+.modal-button {}
+
+.modal-close {}
