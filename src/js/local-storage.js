@@ -3,26 +3,25 @@ export const localStorageItems = JSON.parse(localStorage.getItem('books')) || []
 
 // Додавання об'єкта книги до localStorage без реквеста на сервер
 export async function onAddAndRemoveToLocalStorageOnModal(e) {
-  const bookElement = e.target.closest('.book');
+  const bookElement = e.target.closest('.bs-category-item');
 
   if (!bookElement) return;
 
   const id = bookElement.id;
   const title = bookElement.querySelector('h3').textContent;
-  const description = bookElement.querySelector('.description').textContent;
-  const author = bookElement.querySelector('.author').textContent;
-  const publisher = bookElement.querySelector('.publisher').textContent;
+  const description = bookElement.querySelector('.bs-books-descr').textContent;
+  const author = bookElement.querySelector('.bs-books-author').textContent;
   const bookImage = bookElement.querySelector('img').src;
-  const amazonProductUrl = bookElement.querySelector('.amazon-link').href;
-
+  // const amazonProductUrl = bookElement.querySelector('.amazon-link').href;
+  const category = bookElement.querySelector('.bs-books-thumb').dataset.id;
   const book = {
     _id: id,
     title: title,
     description: description,
     author: author,
-    publisher: publisher,
     book_image: bookImage,
-    amazon_product_url: amazonProductUrl,
+    category: category, 
+    // amazon_product_url: amazonProductUrl,
   };
 
   if (e.target.textContent === 'Add to shopping list') {

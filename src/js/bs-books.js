@@ -95,7 +95,9 @@ function createCategoryItem(books) {
     <div class="bs-books-thumb" data-list-id="${list_name}">
     <a href="#" class="bs-books-item-link link" rel="noopener noreferrer" data-id='${_id}'>
     <div class="bs-category-books-card">  
-      <img src="${book_image}" alt="${title}" class="bs-books-card-img"/>
+      <img src="${book_image}" alt="${title}" class="bs-books-card-img" data-id='${
+        _id
+      }'/>
       <div class="bs-books-overlay">
                 <p class="bs-books-overlay-title">quick view</p>
                 </div>
