@@ -35,6 +35,9 @@ const booksToFetch = [
   '643282b1e85766588626a0b2',
   '643282b1e85766588626a086',
   '643282b1e85766588626a085',
+  '643282b1e85766588626a085',
+  '643282b1e85766588626a0dc',
+  '643282b1e85766588626a086',
 ];
 
 getBooksAndAddToLocalStorage(booksToFetch);
@@ -93,6 +96,8 @@ export function renderBookFromLocalStorageWithoutFetch(book) {
   shoppingList.insertAdjacentHTML('beforeend', markup);
 }
 
+// ============================ Placeholder =======================================
+
 renderShoppingListFromLocalStorage();
 
 function toggleVisibility() {
@@ -105,40 +110,34 @@ function toggleVisibility() {
 
 toggleVisibility();
 
-// const deleteBtn = document.querySelector('.delete-btn');
-
-const deleteBtns = document.querySelectorAll('.delete-btn');
-
-// deleteBtns.forEach(btn => {
-//     btn.addEventListener('click', onRemoveFromShoppingList);
-// });
-
-// function onRemoveFromShoppingList(e) {
-//     const btn = e.currentTarget; // Current button clicked
-//     const listItem = btn.closest('.shopping-list-item'); // Find the closest shopping list item
-//     const id = listItem.dataset.id; // Get the ID from the data attribute
-//     const updatedItems = localStorageItems.filter(item => item._id !== id); // Filter out the item with matching ID
-//     localStorage.setItem('booksArray', JSON.stringify(updatedItems)); // Update local storage
-//     listItem.remove(); // Remove the list item from the DOM
-    
-//     // Update localStorageItems array
-//     const index = localStorageItems.findIndex(item => item._id === id);
-//     localStorageItems.splice(index, 1);
-    
-//     // Check if updatedItems array is empty and remove the entire array from local storage if it is
-//     if (updatedItems.length === 0) {
-//         localStorage.removeItem('booksArray');
-//   }
-  
-//   toggleVisibility();
-// }
+// =========================== Pagination ============================================
 
 const pagination = new Pagination(paginationContainer, {
   totalItems: localStorageItems.length, // Set the total number of items
-  itemsPerPage: 3, // Set the number of items per page
+  itemsPerPage: getWindowWidth() <= 767 ? 4 : 3,
   visiblePages: 3, // Set the number of visible pages
   page: 1, // Set the initial page
+    template: {
+        page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+        currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+        moveButton:
+             '<a href="#" class="tui-page-btn tui-{{type}}">' +
+                 '<span class="tui-ico-{{type}}">{{type}}</span>' +
+             '</a>',
+        disabledMoveButton:
+             '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+                 '<span class="tui-ico-{{type}}">{{type}}</span>' +
+             '</span>',
+       moreButton:
+             '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+                 '<span class="tui-ico-ellip">...</span>' +
+             '</a>'
+     }
 });
+
+function getWindowWidth() {
+  return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+}
 
 // Handle page change event
 pagination.on('afterMove', function (eventData) {
@@ -156,12 +155,14 @@ function renderBooks(page) {
   });
 }
 
+// =================== Remove from shopping list and local storage =============================
+
 // Видалення елемента з Shopping List
 export function onRemoveFromShoppingListAndLocalStorage(e) {
   const target = e.target;
 
   // Check if the clicked element is the PNG image
-  if (target.classList.contains('delete-btn-icon')) {
+  if (target.classList.contains('delete-btn-icon') || target.classList.contains('delete-btn')) {
     const button = target.closest('.delete-btn');
     const id = button.parentNode.dataset.id; // Get the ID from the parent element
     const index = localStorageItems.findIndex(item => item._id === id);
@@ -177,6 +178,7 @@ export function onRemoveFromShoppingListAndLocalStorage(e) {
     toggleVisibility();
 
     if (localStorageItems.length === 0) {
+      localStorage.removeItem('booksArray');
       paginationContainer.style.display = 'none';
     }
   }
