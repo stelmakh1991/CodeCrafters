@@ -1,5 +1,5 @@
 // Створюємо масив для збереження книг у localStorage
-const localStorageItems = JSON.parse(localStorage.getItem('books')) || [];
+export const localStorageItems = JSON.parse(localStorage.getItem('books')) || [];
 
 // Додавання об'єкта книги до localStorage без реквеста на сервер
 export async function onAddAndRemoveToLocalStorageOnModal(e) {
