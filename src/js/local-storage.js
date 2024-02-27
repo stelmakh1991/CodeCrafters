@@ -9,6 +9,7 @@ export async function onAddAndRemoveToLocalStorageOnModal(e) {
 
   const id = bookElement.id;
   const title = bookElement.querySelector('h3').textContent;
+  const description = bookElement.querySelector('.description').textContent;
   const author = bookElement.querySelector('.author').textContent;
   const publisher = bookElement.querySelector('.publisher').textContent;
   const bookImage = bookElement.querySelector('img').src;
@@ -17,6 +18,7 @@ export async function onAddAndRemoveToLocalStorageOnModal(e) {
   const book = {
     _id: id,
     title: title,
+    description: description,
     author: author,
     publisher: publisher,
     book_image: bookImage,
@@ -25,11 +27,13 @@ export async function onAddAndRemoveToLocalStorageOnModal(e) {
 
   if (e.target.textContent === 'Add to shopping list') {
     if (localStorageItems.find(item => item._id === id)) return;
+
     e.target.textContent = 'Remove from shopping list';
     localStorageItems.push(book);
     localStorage.setItem('books', JSON.stringify(localStorageItems));
   } else if (e.target.textContent === 'Remove from shopping list') {
     const index = localStorageItems.findIndex(item => item._id === id);
+
     if (index !== -1) {
       localStorageItems.splice(index, 1);
       localStorage.setItem('books', JSON.stringify(localStorageItems));
@@ -38,7 +42,7 @@ export async function onAddAndRemoveToLocalStorageOnModal(e) {
   }
 }
 
-// Рендер Shopping list без реквеста на сервер
+// Рендер сторінки Shopping List без реквеста на сервер
 export function renderShoppingListFromLocalStorage() {
   try {
     const localStorageItems = JSON.parse(localStorage.getItem('books')) || [];
@@ -56,7 +60,7 @@ export function renderShoppingListFromLocalStorage() {
   }
 }
 
-// Рендер книги без реквеста на сервер
+// Рендер книги з Shopping List без реквеста на сервер
 export function renderBookFromLocalStorageWithoutFetch(book) {
   const markup = `
   <li id="${book._id}">
@@ -71,13 +75,18 @@ export function renderBookFromLocalStorageWithoutFetch(book) {
   shoppingList.insertAdjacentHTML('beforeend', markup);
 }
 
-// Видалення книги на сторінці Shopping List
-export function onRemoveFromShoppingList(e) {
+// Видалення книги зі сторінки Shopping List та зі сховища
+export function onRemoveFromShoppingListAndLocalStorage(e) {
   if (e.target.nodeName !== 'BUTTON') return;
+
   const element = e.target.parentNode;
   const id = element.id;
-  const index = localStorageItems.indexOf(id);
-  localStorageItems.splice(index, 1);
-  localStorage.setItem('books', JSON.stringify(localStorageItems));
+  const index = localStorageItems.findIndex(item => item._id === id);
+
+  if (index !== -1) {
+    localStorageItems.splice(index, 1);
+    localStorage.setItem('books', JSON.stringify(localStorageItems));
+  }
+
   element.remove();
 }
