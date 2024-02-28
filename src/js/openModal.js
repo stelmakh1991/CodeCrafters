@@ -9,8 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //додавання прослуховувача до шопінг лінк
       const shoppingLinks = document.querySelectorAll('.shopping-link');
       shoppingLinks.forEach(link => {
-        link.addEventListener('clic
-        k', function (event) {
+        link.addEventListener('click', function (event) {
           event.preventDefault();
           openShoppingLink(this.dataset.platform);
         });
