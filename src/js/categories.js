@@ -25,15 +25,15 @@ addList();
 
 refs.list.addEventListener('click', renderCategories);
 
-async function getBooksCategorie(e) {
-  const res = await axios.get(
-    `https://books-backend.p.goit.global/books/category?category=${e.currentTarget.name}`,
-    {
-      params: options,
-    }
-  );
-  return res.data;
-}
+// async function getBooksCategorie(e) {
+//   const res = await axios.get(
+//     `https://books-backend.p.goit.global/books/category?category=${e.currentTarget.name}`,
+//     {
+//       params: options,
+//     }
+//   );
+//   return res.data;
+// }
 
 async function renderCategories(event) {
   const res = await axios.get(
@@ -47,13 +47,13 @@ async function renderCategories(event) {
 async function createaGalleryCategories(data, event) {
   const markup = `<h1 class="bs-books-title">
        ${event.target.name}
-      </h1> <div><ul class="bs-list list  ">
+      </h1> <div><ul class="bs-list list">
        <li class="bs-books-item ">
-       <div class="categories-item " data-list-id="${event.target.name}">
+       <div class="categories-item" data-list-id="${event.target.name}">
        ${data
          .map(book => {
            return `
-             <a href="#" class=" link" rel="noopener noreferrer" data-id='${
+             <a href="#" class="bs-books-item-link link" rel="noopener noreferrer" data-id='${
                book._id
              }'>
         
@@ -99,3 +99,5 @@ async function renderAll() {
 //   event.target.classList.add('back-current');
 //   localStorage.removeItem('currentCategorie');
 // }
+
+
