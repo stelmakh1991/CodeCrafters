@@ -155,6 +155,7 @@ color: #ffffff;
   display: none;
 }
 .bs-category-title {
+  color: #000000;
   margin-top: 40px;
   font-weight: 700;
   font-size: 32px;

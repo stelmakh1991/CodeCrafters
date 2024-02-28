@@ -7,14 +7,16 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 const booksApi = new BooksApi();
-
+import amazonIcon from "../images/amazon1.png";
+import bookIcon from "../images/book1.png";
+import xcloseIcon from "../images/x-close.png";
 
   refs.bestBooksSection.addEventListener("click", openBasicModal);
   
   let isModalOpen = false;
 
 
-async function openBasicModal(e) {
+export async function openBasicModal(e) {
     e.preventDefault();
     if (e.target.nodeName !== 'IMG') {
       return;
@@ -32,7 +34,7 @@ async function openBasicModal(e) {
     <div class="book-modal-item" id="${book._id}">
     
     <button class="book-modal-close-btn" type="button">
-        <img class="book-modal-close-btn-img"   src="../images/x-close.png" width="24" height="24"/>
+        <img class="book-modal-close-btn-img"   src="${xcloseIcon}" width="24" height="24"/>
     </button>
     
       <div class="book-modal-thumb" data-id="${book.list_name}">
@@ -50,8 +52,8 @@ async function openBasicModal(e) {
           }</p>
         
         <div class="book-modal-icon">
-          <a href="${book.amazon_product_url}" target="_blank" class="book-modal-link-amazon"><img class="book-modal-icon-amazon" src="../images/amazon1.png"/></a>
-          <a href="${book.buy_links[1].url}" target="_blank" class="book-modal-link-apple"><img class="book-modal-icon-apple" src="../images/book1.png"/></a>  
+          <a href="${book.amazon_product_url}" target="_blank" class="book-modal-link-amazon"><img class="book-modal-icon-amazon" src="${amazonIcon}"/></a>
+          <a href="${book.buy_links[1].url}" target="_blank" class="book-modal-link-apple"><img class="book-modal-icon-apple" src="${bookIcon}"/></a>  
         </div>
         </div>
        </div>

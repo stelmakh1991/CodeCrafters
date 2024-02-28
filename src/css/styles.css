@@ -7,7 +7,6 @@
 
 @import url('./reset.css');
 @import url('./header.css');
-@import url('./mobMenu.css');
 @import url('./supportUkraine.css');
 @import url('./bs-books.css');
 @import url('./modal.css');
@@ -48,7 +47,6 @@ body {
 }
 
 a {
-  color: #FCF9F9;
   font-style: normal;
   text-decoration: none;
 }
@@ -79,8 +77,6 @@ p {
 }
 
 ul {
-  display: flex;
-  flex-wrap: wrap;
   list-style-type: none;
   margin: 0;
   padding-left: 0;
@@ -93,13 +89,14 @@ img {
 }
 
 .wrapper {
-  margin: 0 auto;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
 }
 
 
 @media screen and (min-width: 375px) {
-  .container,
   .sidebar {
     max-width: 375px;
     padding: 0 20px;
@@ -111,17 +108,55 @@ img {
     max-width: 768px;
     padding: 0 32px;
   }
-}
 
-@media screen and (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-    padding: 0 100px;
+  .wrapper {
+    padding: 0;
+  }
+
+  .sidebar {
+    display: flex;
+    min-width: 768px;
+    flex-direction: row;
+    gap: 32px;
+  }
+
+
+  .home-link-fixed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #111;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 36px;
+    background: #eac645;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
     max-width: 1440px;
+  }
+
+  .sidebar {
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    min-width: 380px;
+    padding-left: 24px;
+    gap: 0;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
   }
 }

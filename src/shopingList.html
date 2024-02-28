@@ -13,37 +13,54 @@
     <link rel="stylesheet" href="../css/shopingList.css" />
   </head>
   <body>
-    <load="./partials/header.html" />
+    <load ="./partials/header.html" />
     <div class="wrapper">
-    
-      <aside class="sidebar shopping-list-sidebar">
+      <section class="shopping-list-section">
+        <div class="shopping-list-container">
+          <h1 class="shopping-list-title">
+            Shopping <span class="shopping-list-title-span">List</span>
+          </h1>
+
+          <div class="shop-list-placeholder container-book">
+            <p class="shop-list-placeholder-text">
+              This page is empty, add some books and proceed to order.
+            </p>
+            <picture>
+              <source
+                srcset="
+                  ../png/placeholder-1x.png 1x,
+                  ../png/placeholder-2x.png 2x,
+                  ../png/placeholder-3x.png 3x
+                "
+                media="(min-width: 768px)"
+              />
+              <source
+                srcset="
+                  ../png/placeholder-mob-1x.png 1x,
+                  ../png/placeholder-mob-2x.png 2x,
+                  ../png/placeholder-mob-3x.png 3x
+                "
+                media="(min-width: 320px)"
+              />
+              <img
+                class="shop-list-placeholder-img"
+                src="../png/placeholder-mob-1x.png"
+                alt="books"
+              />
+            </picture>
+          </div>
+
+          <ul class="shopping-list"></ul>
+          <div id="tui-pagination-container" class="tui-pagination"></div>
+        </div>
+      </section>
+
+      <aside class="sidebar">
         <div class="sidebar-content">
-          <load="./partials/supportUkraine.html" />
+          <load ="./partials/supportUkraine.html" />
         </div>
       </aside>
     </div>
-
-    <section class="shopping-list-section">
-      <div class="container">
-        <h1 class="shopping-list-title">
-          Shopping <span class="shopping-list-title-span">List</span>
-        </h1>
-
-        <div class="shop-list-placeholder container-book">
-          <p class="shop-list-placeholder-text">
-            This page is empty, add some books and proceed to order.
-          </p>
-          <picture>
-            <source srcset="../png/placeholder-1x.png 1x, ../png/placeholder-2x.png 2x, ../png/placeholder-3x.png 3x" media="(min-width: 768px)" />
-            <source srcset="../png/placeholder-mob-1x.png 1x, ../png/placeholder-mob-2x.png 2x, ../png/placeholder-mob-3x.png 3x" media="(min-width: 320px)" />
-            <img class="shop-list-placeholder-img" src="../png/placeholder-mob-1x.png" alt="books" />
-          </picture>
-        </div>
-
-        <ul class="shopping-list"></ul>
-        <div id="tui-pagination-container" class="tui-pagination"></div>
-      </div>
-    </section>
 
     <script src="./js/shoppingList.js" type="module"></script>
   </body>

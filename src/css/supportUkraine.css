@@ -1,5 +1,5 @@
 .support-wrapper{
-    max-width: 335px;
+  width: 335px;
   height: 474px;
   margin-top: 40px;
   overflow-y: hidden;
@@ -104,4 +104,10 @@
 
 .support-btn-icon{
     fill: violet;
+}
+
+@media screen and (min-width: 1440px) {
+    .support-wrapper {
+        width: 356px;
+    }
 }
