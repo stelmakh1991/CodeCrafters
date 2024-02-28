@@ -510,20 +510,17 @@ strong.tui-page-btn.tui-is-selected {
 @media screen and (min-width: 1440px) {
     .shopping-list-container {
         width: 996px;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 40px;
     }
 
     .sidebar {
         display: flex;
         width: 380px;
-        padding-left: 24px;
     }
 
     .wrapper {
         display: flex;
         flex-direction: row-reverse;
-        padding-left: 40px;
         padding-right: 24px;
         background-color: #f6f6f6;
     }

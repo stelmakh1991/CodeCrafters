@@ -28,6 +28,7 @@ header {
 .header-button-wrapper{
   display: flex;
   gap: 14px;
+  margin-left: auto;
 }
 
 .logo-icon {
@@ -254,6 +255,7 @@ input:checked+.slider:before {
       justify-content: center;
       align-items: center;
       gap: 16px;
+      margin-left: 36px;
     }
   
     .home-link-fixed {
