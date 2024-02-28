@@ -35,21 +35,24 @@ section {
     display: none;
 }
 
-.container {
-    /* display: none; */
-    width: 375px;
-    /* margin-left: auto;
-    margin-right: auto; */
-}
-
 .shopping-list-section {
     background-color: #f6f6f6;
     padding-top: 40px;
     padding-bottom: 40px;
     min-width: 335px;
-    margin-right: auto;
-    margin-left: auto;
+    display: flex;
+        flex-direction: column;
+        /* Ensure children stack vertically */
+        align-items: center;
+        justify-content: center;
+        /* Center children horizontally */
+
     /* display: none; */
+}
+
+.shopping-list-container {
+    /* display: none; */
+    margin: 0 auto;
 }
 
 .shopping-list-title {
@@ -129,10 +132,12 @@ section {
     /* display: none; */
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
     padding: 0px;
     /* width: 335px; */
-    align-items: flex-start;
+    /* align-items: flex-start; */
 }
 
 .shopping-list-item {
@@ -289,8 +294,10 @@ section {
     filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 
-.tui-pagination {
+#tui-pagination-container.tui-pagination {
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 335px;
 }
 
@@ -299,28 +306,30 @@ section {
     fill: #111;
     stroke-width: 1px;
     stroke: #111;
-    /* padding: 12px 14px; */
     width: 38px;
-    height: 38px;
+    /* height: 38px; */ /* padding: 12px 14px; */
+    flex-shrink: 0;
     font-family: "DM Sans", sans-serif;
     font-weight: 700;
-    font-size: 18px;
+    /* font-size: 18px; */
     line-height: 1.22222;
     color: #000;
     border: 1px solid black;
-    /* margin-right: 8px;
-    margin-left: 8px; */
+    display: block;
+    text-align: center;
+    position: relative;
+    font-size: 20px;
 }
 
-.tui-pagination .tui-is-selected {
+#tui-pagination-container .tui-page-btn {
+    border: 1px solid black;
+}
+
+strong.tui-page-btn.tui-is-selected {
     border-radius: 100%;
     background-color: black;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1.22222;
     color: #fff;
-    /* border: 1px solid white; */
+    border: 1px solid black;
     /* border-left: none; */
 }
 
@@ -330,24 +339,12 @@ section {
     border-left: none;
 } */
 
-.tui-page-btn {
-    display: block;
-    text-align: center;
-    position: relative;
-    /* justify-content: start; */
-    font-family: "DM Sans", sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.1;
-    color: #111;
-}
-
 .tui-ico-ellip {
     /* Adjust the position of the three dots */
     position: absolute;
-    top: 25%;
-    left: 45%;
-    transform: translate(-25%, -25%);
+    top: 10%;
+    left: 50%;
+    transform: translate(-45%, -45%);
     font-family: "DM Sans", sans-serif;
     font-weight: 500;
     font-size: 20px;
@@ -383,9 +380,8 @@ section {
     transform: translate(-50%, -50%);
 }
 
-
 @media screen and (min-width: 768px) {
-    .container {
+    .shopping-list-container {
         width: 768px;
         padding-left: 32px;
         padding-right: 32px;
@@ -483,7 +479,7 @@ section {
             height: 27px;
     }
 
-    .tui-pagination {
+   #tui-pagination-container.tui-pagination {
         margin-top: 40px;
         max-width: 446px;
         margin-right: auto;
@@ -492,13 +488,13 @@ section {
 
     .tui-pagination .tui-page-btn {
         width: 44px;
-        height: 44px;
+        /* height: 44px; */
         padding: 12px 14px;
     }
 }
 
 @media screen and (min-width: 1440px) {
-    .container {
+    .shopping-list-container {
         width: 996px;
         padding-left: 15px;
         padding-right: 15px;
@@ -506,6 +502,16 @@ section {
 
     .sidebar {
         display: flex;
+        width: 380px;
+        padding-left: 24px;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-left: 40px;
+        padding-right: 24px;
+        background-color: #f6f6f6;
     }
 
     .shopping-list-title {}

@@ -1,5 +1,6 @@
 // Створюємо масив для збереження книг у localStorage
 export const localStorageItems = JSON.parse(localStorage.getItem('books')) || [];
+export const shoppingList = document.querySelector('.shopping-list');
 
 // Додавання об'єкта книги до localStorage без реквеста на сервер
 export async function onAddAndRemoveToLocalStorageOnModal(e) {
@@ -46,10 +47,10 @@ export async function onAddAndRemoveToLocalStorageOnModal(e) {
   }
 }
 
-// Рендер сторінки Shopping List без реквеста на сервер
+// Рендер Shopping list без реквеста на сервер
 export function renderShoppingListFromLocalStorage() {
+  // const localStorageItems = JSON.parse(localStorage.getItem('books')) || [];
   try {
-    const localStorageItems = JSON.parse(localStorage.getItem('books')) || [];
     if (!localStorageItems) return;
     localStorageItems.forEach(book =>
       renderBookFromLocalStorageWithoutFetch(book)
@@ -64,33 +65,31 @@ export function renderShoppingListFromLocalStorage() {
   }
 }
 
-// Рендер книги з Shopping List без реквеста на сервер
+// Рендер книги без реквеста на сервер
 export function renderBookFromLocalStorageWithoutFetch(book) {
-  const markup = `
-  <li id="${book._id}">
-    <img src="${book.book_image}" alt="${book.title}">
-    <h3>${book.title}</h3>
-    <p>${book.author}</p>
-    <p>${book.publisher}</p>
-    <a href="${book.amazon_product_url}" target="_blank">Buy on Amazon</a>
-    <button type="button">Remove from shopping list</button>
-  </li>`;
+  const markup = `<li class="shopping-list-item" data-id="${book._id}">
 
+        <button type="button" class="delete-btn" title="Delete"> 
+        <div class="delete-btn-icon"> </div> </button> 
+
+        <div class="shopping-list-div-image"> <img class="shopping-list-image" src="${book.book_image}" alt="${book.title}"> </div> 
+
+        <div class="shopping-list-text"> <h2 class="shopping-list-item-header">${book.title}</h2>
+        
+        <p class="shopping-list-item-category">${book.list_name}</p> 
+        <div class="description-wrapper"><p class="shopping-list-item-description">${book.description}</p></div>
+        
+        <div class="link-container"> 
+        <p class="shopping-list-item-author">${book.author}</p>
+        <div class=""link-wrapper>
+            <a class="amazon-icon" href="${book.amazon_product_url}" target="_blank" rel="noopener noreferrer nofollow"> <div class="amazon-logo hover-items-amaz-books"> <img src="./png/amazon-1x.png" alt="Amazon" />
+            </div> </a>
+            <a class="apple-icon" href="${book.buy_links[1].url}" target="_blank" rel="noopener noreferrer nofollow"> <div class="apple-books-logo hover-items-amaz-books">
+            <img src="./png/amazon-book-1x.png" alt="Apple book"/>
+            </div> </a>
+        </div>
+        </div>
+        </div>
+        </li>`;
   shoppingList.insertAdjacentHTML('beforeend', markup);
-}
-
-// Видалення книги зі сторінки Shopping List та зі сховища
-export function onRemoveFromShoppingListAndLocalStorage(e) {
-  if (e.target.nodeName !== 'BUTTON') return;
-
-  const element = e.target.parentNode;
-  const id = element.id;
-  const index = localStorageItems.findIndex(item => item._id === id);
-
-  if (index !== -1) {
-    localStorageItems.splice(index, 1);
-    localStorage.setItem('books', JSON.stringify(localStorageItems));
-  }
-
-  element.remove();
 }
