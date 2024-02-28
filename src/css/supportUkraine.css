@@ -1,8 +1,6 @@
 .support-wrapper{
     max-width: 335px;
   height: 474px;
-  /* height: fit-content;
-  height: 474px; */
   margin-top: 40px;
   overflow-y: hidden;
   border-radius: 16px;
@@ -19,9 +17,6 @@
 .support-container{
     width: 255px;
     height: 364px;
-    /* height: fit-content;
-    height: 400px; */
-    /* margin-bottom: 30px; */
 }
 
 .title-icon{
@@ -35,13 +30,6 @@
     line-height: 1.16;
     letter-spacing: -0.96px;
     font-style: normal;
-}
-
-.ukr-header{
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px; */
 }
 
 .support-icon{
@@ -59,6 +47,7 @@
 
 .support-list{
     height: 320px;
+    overflow: hidden;
 }
 
 .support-list-item{

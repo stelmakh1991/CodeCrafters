@@ -88,7 +88,7 @@ const loadItems = () => {
 };
 
 const scrollToNextItem = () => {
-  let INC = 4;
+  let INC = 5;
   // if (window.innerWidth >= 768) {
   //   INC = 6;
   // } else {
