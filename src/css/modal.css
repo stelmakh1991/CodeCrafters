@@ -141,6 +141,9 @@ p {
   max-height: 100vh;
   overflow-y: auto;
 }
+.basicLightbox {
+  align-items: start;
+}
 
 /* =================768======================== */
 
@@ -187,5 +190,8 @@ p {
     font-size: 12px;
     line-height: 1.17;
     width: 324px;
+  }
+  .basicLightbox {
+    align-items: center;
   }
 }
