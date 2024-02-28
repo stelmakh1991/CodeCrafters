@@ -215,28 +215,3 @@ export function onRemoveFromShoppingList(e) {
   localStorage.setItem('books', JSON.stringify(localStorageItems));
   element.remove();
 }
-
-
-
-const pagination = new Pagination(paginationContainer, {
-  totalItems: localStorageItems.length, // Set the total number of items
-  itemsPerPage: getWindowWidth() <= 767 ? 4 : 3,
-  visiblePages: 3, // Set the number of visible pages
-  page: 1, // Set the initial page
-  template: {
-    page: '<a href="#" class="tui-page-btn">{{page}}</a>',
-    currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
-    moveButton:
-      '<a href="#" class="tui-page-btn tui-{{type}}">' +
-      '<span class="tui-ico-{{type}}">{{type}}</span>' +
-      '</a>',
-    disabledMoveButton:
-      '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
-      '<span class="tui-ico-{{type}}">{{type}}</span>' +
-      '</span>',
-    moreButton:
-      '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
-      '<span class="tui-ico-ellip">...</span>' +
-      '</a>'
-  }
-});
