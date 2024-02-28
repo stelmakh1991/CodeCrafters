@@ -17,7 +17,7 @@
     <link rel="modulepreload" crossorigin href="/CodeCrafters/assets/vendor-c29d349d.js">
     <link rel="stylesheet" href="/CodeCrafters/assets/supportUkraine-80480817.css">
     <link rel="stylesheet" href="/CodeCrafters/assets/vendor-08e830de.css">
-    <link rel="stylesheet" href="/CodeCrafters/assets/index-0b9c19b3.css">
+    <link rel="stylesheet" href="/CodeCrafters/assets/index-4dc080de.css">
   </head>
 
   <body>
@@ -28,7 +28,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Header</title>
-    <link rel="stylesheet" href="/src/css/header.css" />
+    <link rel="stylesheet" href="../css/header.css" />
   </head>
 
   <body>
@@ -38,20 +38,6 @@
           <use href="/svg-sprite.svg#icon-logo"></use>
         </svg>
         <span>Bookshelf</span>
-      </div>
-
-      <div class="header-menu">
-        <div class="home-link">
-          <span>Home</span>
-        </div>
-
-        <div class="shopping-list">
-          <a href="shopingList.html">Shopping list</a>
-          <!-- <span>Shopping List</span> -->
-          <svg class="logo-shop" width="20" height="20">
-            <use href="/svg-sprite.svg#icon-bag"></use>
-          </svg>
-        </div>
       </div>
 
       <div class="toggle-button">
@@ -70,7 +56,18 @@
       </div>
 
       <div class="dropdown-menu">
-        <a href="#">інший вміст сайту</a>
+      <div class="header-menu">
+        <div class="home-link">
+          <span>Home</span>
+        </div>
+      
+        <div class="header-shopping-list">
+          <a href="../shopingList.html">Shopping list</a>
+          <svg class="logo-shop" width="20" height="20">
+            <use href="/svg-sprite.svg#icon-bag"></use>
+          </svg>
+        </div>
+      </div>
       </div>
     </header>
     <script>
