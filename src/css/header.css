@@ -262,9 +262,6 @@ input:checked+.slider:before {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 8px 16px;
-      border-radius: 36px;
-      background: #eac645;
       font-family: 'DM Sans', sans-serif;
       font-weight: 700;
       font-size: 14px;
