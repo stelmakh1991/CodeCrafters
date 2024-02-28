@@ -31,6 +31,10 @@ section {
     /* width: 320px; */
 }
 
+sidebar {
+    display: none;
+}
+
 .container {
     /* display: none; */
     width: 375px;
@@ -492,11 +496,15 @@ section {
     }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
     .container {
         width: 996px;
         padding-left: 15px;
         padding-right: 15px;
+    }
+
+    .sidebar {
+        display: flex;
     }
 
     .shopping-list-title {}
