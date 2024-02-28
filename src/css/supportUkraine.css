@@ -1,7 +1,8 @@
 .support-wrapper{
     max-width: 335px;
   height: 474px;
-  /* height: fit-content; */
+  /* height: fit-content;
+  height: 474px; */
   margin-top: 40px;
   overflow-y: hidden;
   border-radius: 16px;
@@ -18,7 +19,9 @@
 .support-container{
     width: 255px;
     height: 364px;
-    /* height: fit-content; */
+    /* height: fit-content;
+    height: 400px; */
+    /* margin-bottom: 30px; */
 }
 
 .title-icon{
@@ -48,17 +51,20 @@
 }
 
 .support-list-container{
-    position: relative;
-    margin-top: 35px;
+    margin-top: 30px;
     width: 255px;
-    height: 230px;
-    /* height: fit-content; */
+    height: 250px;
+    margin-bottom: 50px;
+}
+
+.support-list{
+    height: 320px;
 }
 
 .support-list-item{
     display: flex;
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     justify-content: flex-start;
     align-items: flex-start;
 }
