@@ -17,7 +17,7 @@ async function getBooksAndAddToLocalStorage(array) {
     );
 
     // Convert the array to a string before storing it in local storage
-    localStorage.setItem('booksArray', JSON.stringify(localStorageArray));
+    localStorage.setItem('books', JSON.stringify(localStorageArray));
   } catch (error) {
     console.error('Error fetching books:', error);
     // Optionally, you can handle the error here, e.g., display an error message to the user
@@ -33,10 +33,22 @@ const booksToFetch = [
   '643282b1e85766588626a0dc',
   '643282b1e85766588626a080',
   '643282b1e85766588626a0b2',
+  '643282b1e85766588626a085',
+  '643282b1e85766588626a085',
+  '643282b1e85766588626a0dc',
+  '643282b1e85766588626a086',
+  '643282b1e85766588626a0dc',
+  '643282b1e85766588626a085',
+  '643282b1e85766588626a0b2',
+  '643282b1e85766588626a086',
   '643282b1e85766588626a086',
   '643282b1e85766588626a085',
   '643282b1e85766588626a085',
   '643282b1e85766588626a0dc',
+  '643282b1e85766588626a086',
+  '643282b1e85766588626a0dc',
+  '643282b1e85766588626a085',
+  '643282b1e85766588626a0b2',
   '643282b1e85766588626a086',
 ];
 
@@ -46,12 +58,12 @@ getBooksAndAddToLocalStorage(booksToFetch);
 
 const shoppingList = document.querySelector('.shopping-list');
 const placeholder = document.querySelector('.shop-list-placeholder');
-const localStorageItems = JSON.parse(localStorage.getItem('booksArray')) || [];
+const localStorageItems = JSON.parse(localStorage.getItem('books')) || [];
 const paginationContainer = document.querySelector('.tui-pagination');
 
 // Рендер Shopping list без реквеста на сервер
 export function renderShoppingListFromLocalStorage() {
-  // const localStorageItems = JSON.parse(localStorage.getItem('booksArray')) || [];
+  // const localStorageItems = JSON.parse(localStorage.getItem('books')) || [];
   try {
     if (!localStorageItems) return;
     localStorageItems.forEach(book =>
@@ -161,7 +173,7 @@ function renderBooks(page) {
 export function onRemoveFromShoppingListAndLocalStorage(e) {
   const target = e.target;
 
-  // Check if the clicked element is the PNG image
+  // Check if the clicked element is the button or PNG image
   if (target.classList.contains('delete-btn-icon') || target.classList.contains('delete-btn')) {
     const button = target.closest('.delete-btn');
     const id = button.parentNode.dataset.id; // Get the ID from the parent element
@@ -169,7 +181,7 @@ export function onRemoveFromShoppingListAndLocalStorage(e) {
 
     if (index !== -1) {
       localStorageItems.splice(index, 1);
-      localStorage.setItem('booksArray', JSON.stringify(localStorageItems));
+      localStorage.setItem('books', JSON.stringify(localStorageItems));
       renderBooks(pagination.getCurrentPage()); // Render books for the current page
       pagination.reset(localStorageItems.length); // Reset pagination with updated total items
     }
@@ -178,7 +190,7 @@ export function onRemoveFromShoppingListAndLocalStorage(e) {
     toggleVisibility();
 
     if (localStorageItems.length === 0) {
-      localStorage.removeItem('booksArray');
+      localStorage.removeItem('books');
       paginationContainer.style.display = 'none';
     }
   }
