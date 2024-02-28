@@ -9,8 +9,10 @@
 @import url('./header.css');
 @import url('./mobMenu.css');
 @import url('./supportUkraine.css');
-@import url('./shopingList.css');
 @import url('./bs-books.css');
+@import url('./modal.css');
+@import url('./categories.css');
+@import url('./scrollup.css');
 @import 'node_modules/modern-normalize/modern-normalize.css';
 
 
