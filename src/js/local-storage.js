@@ -16,7 +16,7 @@ export async function onAddAndRemoveToLocalStorageOnModal(e) {
   const appleProductUrl = bookElement.querySelector('.book-modal-link-apple').href;
   const category = bookElement.querySelector('.book-modal-thumb').dataset.id;
   const modalText = bookElement.querySelector('.modal-text');
-  modalText.style.display = 'none';
+  // modalText.style.display = 'none';
   const book = {
     _id: id,
     title: title,
@@ -29,13 +29,15 @@ export async function onAddAndRemoveToLocalStorageOnModal(e) {
   };
 
   if (e.target.textContent === 'Add to shopping list') {
+    modalText.style.display = 'block';
     if (localStorageItems.find(item => item._id === id)) return;
 
     e.target.textContent = 'Remove from shopping list';
-    modalText.style.display = 'block';
+    // modalText.style.display = 'block';
     localStorageItems.push(book);
     localStorage.setItem('books', JSON.stringify(localStorageItems));
   } else if (e.target.textContent === 'Remove from shopping list') {
+    modalText.style.display = 'none';
     const index = localStorageItems.findIndex(item => item._id === id);
 
     if (index !== -1) {
