@@ -1,7 +1,7 @@
 body {
-  background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, rgb(79, 46, 232) 18.02733987569809%, rgb(255, 255, 255) 100%);
+  /* background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, rgb(79, 46, 232) 18.02733987569809%, rgb(255, 255, 255) 100%);
   margin: 0px;
-  min-height: 812px;
+  min-height: 812px; */
 }
 
 header {
@@ -16,6 +16,7 @@ header {
   border-radius: 0 0 8px 8px;
   min-width: 375px;
   box-sizing: border-box;
+  z-index: 2000;
 }
 
 .header-logo {
@@ -56,7 +57,7 @@ header {
   justify-content: center;
 }
 
-.shopping-list {
+.header-shopping-list {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,11 +180,14 @@ input:checked+.slider:before {
 .dropdown-menu {
   display: none;
   position: absolute;
+  background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, rgb(79, 46, 232) 18.02733987569809%, rgb(255, 255, 255) 100%);
+    min-height: 812px;
   top: 100%;
   left: 0;
   background-color: #333;
   padding: 10px 20px;
   width: 100%;
+  margin: 0px;
   z-index: 1000;
 }
 
@@ -213,7 +217,7 @@ input:checked+.slider:before {
     display: none;
   }
 
-  .shopping-list {
+  .header-shopping-list {
     position: relative;
     margin: 0;
   }
