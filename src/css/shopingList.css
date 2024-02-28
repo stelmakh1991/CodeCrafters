@@ -507,6 +507,40 @@ strong.tui-page-btn.tui-is-selected {
     }
 }
 
+@media screen and (min-width: 768px) {
+    .home-link-fixed {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.28571;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: #111;
+            text-decoration: none;
+        }
+    
+        .header-shopping-list-fixed {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 36px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.29;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: #111;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 36px;
+            background: #eac645;
+        }
+}
+
 @media screen and (min-width: 1440px) {
     .shopping-list-container {
         width: 996px;

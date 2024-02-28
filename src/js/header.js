@@ -53,5 +53,3 @@
 //     dropdownMenu.classList.toggle('active');
 //   }
 // });
-
-
