@@ -9,7 +9,7 @@ header {
   color: #000000;
   padding: 17px 19px;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   position: relative;
   border: 1.50px solid black;
@@ -22,6 +22,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 40px;
 }
 
 .header-button-wrapper{
@@ -75,9 +76,10 @@ header {
 
 .toogle-button {
   display: flex;
-  display: inline-block;
+  align-items: center;
+  margin-left: auto;
   position: relative;
-  justify-content: flex-end;
+  width: 40px;
 }
 
 
@@ -187,7 +189,8 @@ input:checked+.slider:before {
   display: none;
   position: absolute;
   background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, rgb(79, 46, 232) 18.02733987569809%, rgb(255, 255, 255) 100%);
-  min-height: 812px;
+  /* min-height: 812px; */
+  height: 100vh;
   top: 100%;
   left: 0;
   background-color: #333;
@@ -197,7 +200,7 @@ input:checked+.slider:before {
   z-index: 1000;
 }
 
-.dropdown-menu.active {
+.active {
   display: block;
 }
 
@@ -210,6 +213,10 @@ input:checked+.slider:before {
 
 .dropdown-menu a:hover {
   background-color: #555;
+}
+
+.header-menu-fixed {
+  display: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -237,6 +244,50 @@ input:checked+.slider:before {
     display: flex;
     align-items: center;
   }
+
+    .dropdown-menu {
+      display: none;
+    }
+  
+    .header-menu-fixed {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
+  
+    .home-link-fixed {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 16px;
+      border-radius: 36px;
+      background: #eac645;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.28571;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: #111;
+      text-decoration: none;
+    }
+  
+    .header-shopping-list-fixed {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 36px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.29;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: #111;
+      text-decoration: none;
+    }
+    
 }
 
 @media only screen and (min-width: 1440px) {}
