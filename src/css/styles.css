@@ -7,7 +7,6 @@
 
 @import url('./reset.css');
 @import url('./header.css');
-@import url('./mobMenu.css');
 @import url('./supportUkraine.css');
 @import url('./bs-books.css');
 @import url('./modal.css');
@@ -79,8 +78,6 @@ p {
 }
 
 ul {
-  display: flex;
-  flex-wrap: wrap;
   list-style-type: none;
   margin: 0;
   padding-left: 0;
@@ -99,7 +96,6 @@ img {
 
 
 @media screen and (min-width: 375px) {
-  .container,
   .sidebar {
     max-width: 375px;
     padding: 0 20px;
@@ -111,17 +107,32 @@ img {
     max-width: 768px;
     padding: 0 32px;
   }
-}
 
-@media screen and (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-    padding: 0 100px;
-  }
+    .sidebar {
+      display: flex;
+      flex-direction: row;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      box-sizing: border-box;
+      padding-left: 40px;
+    }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
     max-width: 1440px;
+  }
+
+  .sidebar {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    width: 380px;
+    padding-left: 40px;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: row;
   }
 }
