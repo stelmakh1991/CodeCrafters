@@ -134,6 +134,13 @@ p {
   margin-left: auto;
   height: 36px;
 }
+.modal-text-closed {
+    display: none;
+}
+.modal {
+  max-height: 100vh;
+  overflow-y: auto;
+}
 
 /* =================768======================== */
 
