@@ -31,7 +31,7 @@ section {
     /* width: 320px; */
 }
 
-sidebar {
+.sidebar {
     display: none;
 }
 
@@ -49,6 +49,7 @@ sidebar {
     min-width: 335px;
     margin-right: auto;
     margin-left: auto;
+    /* display: none; */
 }
 
 .shopping-list-title {
