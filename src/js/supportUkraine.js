@@ -8,7 +8,7 @@ import actionAgainstHunger from '/images/action-min.png';
 import worldVision from '/images/world-min.png';
 import serhiyPrytulaCharityFoundation from '/images/prytula-min.png';
 
-export const support = [
+const support = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
@@ -56,66 +56,65 @@ export const support = [
   },
 ];
 
-// const listEl = document.getElementById('support-list');
-// const scrollButton = document.getElementById('scroll-btn');
-// const btnIcon = document.querySelector('.support-btn-icon');
+const listEl = document.getElementById('support-list');
+const scrollButton = document.getElementById('scroll-btn');
+const btnIcon = document.querySelector('.support-btn-icon');
 
-// let index = 1;
-// let currentItemIndex = 0;
-// let listItemHeight = 0;
-// const maxItems = support.length;
+let index = 1;
+let currentItemIndex = 0;
+let listItemHeight = 0;
+const maxItems = support.length;
 
-// const loadItems = () => {
-//   support.forEach(item => {
-//     const listItem = `
-//       <li class="support-list-item">
+const loadItems = () => {
+  support.forEach(item => {
+    const listItem = `
+      <li class="support-list-item">
+      <span class="support-number">0${index++}</span>
+        <a class="support-list-link" href="${item.url}" target="_blank" alt="${
+      item.title
+    }">
+    
+          <img class="support-img" srcset="${item.img} 1x, ${
+      item.img
+    } 2x"src="${item.img}" alt="${item.title}" />
 
-//         <a class="support-list-link" href="${
-//           item.url
-//         }" target="_blank" alt="${
-//       item.title
-//     }">
-//           0${index++}<img class="support-img" srcset="${item.img} 1x, ${
-//       item.img
-//     } 2x"src="${item.img}" alt="${item.title}" />
+        </a>
+      </li>
+    `;
+    listEl.insertAdjacentHTML('beforeend', listItem);
+  });
 
-//         </a>
-//       </li>
-//     `;
-//     listEl.insertAdjacentHTML('beforeend', listItem);
-//   });
+  listItemHeight = listEl.firstElementChild.clientHeight;
+};
 
-//   listItemHeight = listEl.firstElementChild.clientHeight;
-// };
+const scrollToNextItem = () => {
+  let INC = 5;
+  // if (window.innerWidth >= 768) {
+  //   INC = 6;
+  // } else {
+  //   INC = 4;
+  // }
+  currentItemIndex = currentItemIndex + INC;
 
-// const scrollToNextItem = () => {
-//   let INC = 4;
-//   if (window.innerWidth >= 768) {
-//     INC = 6;
-//   } else {
-//     INC = 4;
-//   }
-//   currentItemIndex = currentItemIndex + INC;
+  if (currentItemIndex >= maxItems) {
+    currentItemIndex = 0;
+    listEl.scrollTo({
+      top: currentItemIndex * listItemHeight,
+      behavior: 'smooth',
+    });
+  } else {
+    listEl.scrollTo({
+      top: currentItemIndex * listItemHeight,
+      behavior: 'smooth',
+    });
+  }
+  if (currentItemIndex + INC >= maxItems) {
+    btnIcon.classList.add('rotate');
+  } else {
+    btnIcon.classList.remove('rotate');
+  }
+};
 
-//   if (currentItemIndex >= maxItems) {
-//     currentItemIndex = 0;
-//     listEl.scrollTo({
-//       top: currentItemIndex * listItemHeight,
-//       behavior: 'smooth',
-//     });
-//   } else {
-//     listEl.scrollTo({
-//       top: currentItemIndex * listItemHeight,
-//       behavior: 'smooth',
-//     });
-//   }
-//   if (currentItemIndex + INC >= maxItems) {
-//     btnIcon.classList.add('rotate');
-//   } else {
-//     btnIcon.classList.remove('rotate');
-//   }
-// };
+scrollButton.addEventListener('click', scrollToNextItem);
 
-// scrollButton.addEventListener('click', scrollToNextItem);
-
-// loadItems();
+loadItems();
