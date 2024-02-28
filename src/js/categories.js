@@ -53,7 +53,7 @@ async function createaGalleryCategories(data, event) {
        ${data
          .map(book => {
            return `
-             <a href="#" class="bs-books-item-link link" rel="noopener noreferrer" data-id='${
+             <a href="#" class="link" rel="noopener noreferrer" data-id='${
                book._id
              }'>
         
