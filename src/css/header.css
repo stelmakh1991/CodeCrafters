@@ -39,6 +39,7 @@ header {
   display: flex;
   margin-left: auto;
   gap: 14px;
+  margin-left: auto;
 }
 
 .logo-icon {
@@ -287,17 +288,6 @@ input:checked + .slider:before {
     all: unset;
     display: flex;
     align-items: center;
-  }
-
-  .dropdown-menu {
-    display: none;
-  }
-
-  .header-menu-fixed {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
   }
 
   .header-home-link-fixed {
