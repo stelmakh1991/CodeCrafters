@@ -1,25 +1,9 @@
-.categories-box {
-  gap: 20px;
-}
+
 .box-cat {
   width: 335px;
   height: 228px;
   overflow-y: scroll;
-  margin-bottom: 40px;
-}
-
-@media screen and (min-width: 768px) {
-  .box-cat {
-    width: 337px;
-    height: 472px;
-    margin-bottom: 98px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .box-cat {
-    width: 356px;
-    margin-bottom: 86px;
-  }
+  margin-top: 40px;
 }
 
 .btn-list {
@@ -28,18 +12,90 @@
   font: inherit;
   color: inherit;
   background-color: transparent;
-
+  margin-bottom: 24px;
   cursor: pointer;
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 112%;
+  line-height: 1.12;
   letter-spacing: -0.02em;
   color: rgba(17, 17, 17, 0.6);
 }
-.back-current {
+
+/* =============================================== */
+.btn-list-item {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.6);
+}
+.categories-box {
+  margin-bottom: 24px;
+}
+.categories-List {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.btn-list:hover,
+.btn-list:focus {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
   color: #4f2ee8;
 }
-.categories-List > .categories-item:not(:last-child) {
-  margin-bottom: 20px;
+.btn-list-item:hover,
+.btn-list-item:focus {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #4f2ee8;
+}
+
+/* =================Медіа запити =========================== */
+
+@media screen and (min-width: 768px) {
+  .box-cat {
+    width: 337px;
+    height: 472px;
+    white-space: nowrap;
+  }
+  .btn-list {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+  .btn-list-item {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+  .categories-List {
+    gap: 32px;
+  }
+  .btn-list:hover,
+  .btn-list:focus {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+  .btn-list-item:hover,
+  .btn-list-item:focus {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .box-cat {
+    width: 356px;
+    /* margin-bottom: 86px; */
+  }
 }

@@ -10,22 +10,21 @@ const refs = {
 };
 async function addList() {
   const obj = await booksApi.getCategories();
-
   const link = obj
     .map(
       list => ` <li class="categories-item" name="${list.list_name}">
-         <button class="btn-list" type="button" name="${list.list_name}">${list.list_name}</button>
+         <button class="btn-list-item" type="button" name="${list.list_name}">${list.list_name}</button>
         </li>
         `
     )
-
     .sort()
     .join('');
   refs.list.insertAdjacentHTML('beforeend', link);
 }
-
 addList();
+
 refs.list.addEventListener('click', renderCategories);
+
 async function getBooksCategorie(e) {
   const res = await axios.get(
     `https://books-backend.p.goit.global/books/category?category=${e.currentTarget.name}`,
@@ -35,18 +34,19 @@ async function getBooksCategorie(e) {
   );
   return res.data;
 }
+
 async function renderCategories(event) {
   const res = await axios.get(
     `https://books-backend.p.goit.global/books/category?category=${event.target.name}`
   );
   createaGalleryCategories(res.data, event);
 
-  currentColorBtn(event);
-  localStorage.setItem('currentCategorie', event.target.name);
+  // currentColorBtn(event);
+  // localStorage.setItem('currentCategorie', event.target.name);
 }
 async function createaGalleryCategories(data, event) {
   const markup = `<h1 class="bs-books-title">
-       ${event.target.name} <span class="bs-books-title-blue">Books</span>
+       ${event.target.name}
       </h1> <div><ul class="bs-list list  ">
        <li class="bs-books-item ">
        <div class="categories-item " data-list-id="${event.target.name}">
@@ -62,6 +62,9 @@ async function createaGalleryCategories(data, event) {
                   src="${book.book_image}"
                   alt="${book.title}"
                   class="bs-books-card-img"
+                  data-id='${
+                    book._id
+                  }'
                 />
                 <div class="bs-books-overlay">
                 <p class="bs-books-overlay-title">quick view</p>
@@ -88,11 +91,11 @@ btnAllCategories.addEventListener('click', renderAll);
 async function renderAll() {
   location.reload();
 }
-async function currentColorBtn(event) {
-  btnAllCategories.classList.remove('back-current');
-  const current = localStorage.getItem('currentCategorie');
-  const currentEL = document.querySelector(`.btn-list[name= "${current}"]`);
-  currentEL.classList.remove('back-current');
-  event.target.classList.add('back-current');
-  localStorage.removeItem('currentCategorie');
-}
+// async function currentColorBtn(event) {
+//   btnAllCategories.classList.remove('back-current');
+//   const current = localStorage.getItem('currentCategorie');
+//   const currentEL = document.querySelector(`.btn-list[name= "${current}"]`);
+//   currentEL.classList.remove('back-current');
+//   event.target.classList.add('back-current');
+//   localStorage.removeItem('currentCategorie');
+// }

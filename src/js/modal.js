@@ -14,7 +14,7 @@ const booksApi = new BooksApi();
   let isModalOpen = false;
 
 
-async function openBasicModal(e) {
+export async function openBasicModal(e) {
     e.preventDefault();
     if (e.target.nodeName !== 'IMG') {
       return;
