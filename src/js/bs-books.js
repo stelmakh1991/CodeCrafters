@@ -22,10 +22,7 @@ function createGalleryItem(data) {
             ${elements.books
               .map(book => {
                 return `
-  
-              <a href="#" class="bs-books-item-link link" rel="noopener noreferrer" data-id='
-              '>
-        
+              <a href="#" class="bs-books-item-link link" rel="noopener noreferrer">
               <div class="bs-books-card" data-id=''>
                 <img
                   src="${book.book_image}"
@@ -93,12 +90,14 @@ function createCategoryItem(books) {
   arr.forEach(({ _id, book_image, title, author, list_name }) => {
     bookCategoryList += `<li class="bs-category-item" id="${_id}">
     <div class="bs-books-thumb" data-list-id="${list_name}">
-    <a href="#" class="bs-books-item-link link" rel="noopener noreferrer" data-id='${_id}'>
+    <a href="#" class="bs-books-item-link link" rel="noopener noreferrer">
     <div class="bs-category-books-card">  
-      <img src="${book_image}" alt="${title}" class="bs-books-card-img"/>
-      <div class="bs-books-overlay">
-                <p class="bs-books-overlay-title">quick view</p>
-                </div>
+      <img src="${book_image}" alt="${title}" class="bs-books-card-img" data-id='${
+        _id
+      }'/>
+        <div class="bs-books-overlay">
+          <p class="bs-books-overlay-title">quick view</p>
+        </div>          
       </div>
       <div class="bs-books-item-thumb">
       <h3 class="bs-books-item-title">${title.slice(0, 18)}</h3>

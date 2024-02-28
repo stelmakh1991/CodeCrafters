@@ -3,32 +3,36 @@ export const localStorageItems = JSON.parse(localStorage.getItem('books')) || []
 
 // Додавання об'єкта книги до localStorage без реквеста на сервер
 export async function onAddAndRemoveToLocalStorageOnModal(e) {
-  const bookElement = e.target.closest('.book');
+  const bookElement = e.target.closest('.book-modal-item');
 
   if (!bookElement) return;
 
   const id = bookElement.id;
   const title = bookElement.querySelector('h3').textContent;
-  const description = bookElement.querySelector('.description').textContent;
-  const author = bookElement.querySelector('.author').textContent;
-  const publisher = bookElement.querySelector('.publisher').textContent;
+  const description = bookElement.querySelector('.book-modal-descr').textContent;
+  const author = bookElement.querySelector('.book-modal-author').textContent;
   const bookImage = bookElement.querySelector('img').src;
-  const amazonProductUrl = bookElement.querySelector('.amazon-link').href;
-
+  const amazonProductUrl = bookElement.querySelector('.book-modal-link-amazon').href;
+  const appleProductUrl = bookElement.querySelector('.book-modal-link-apple').href;
+  const category = bookElement.querySelector('.book-modal-thumb').dataset.id;
+  const modalText = bookElement.querySelector('.modal-text');
+  modalText.style.display = 'none';
   const book = {
     _id: id,
     title: title,
     description: description,
     author: author,
-    publisher: publisher,
     book_image: bookImage,
+    category: category, 
     amazon_product_url: amazonProductUrl,
+    apple_product_url: appleProductUrl,
   };
 
   if (e.target.textContent === 'Add to shopping list') {
     if (localStorageItems.find(item => item._id === id)) return;
 
     e.target.textContent = 'Remove from shopping list';
+    modalText.style.display = 'block';
     localStorageItems.push(book);
     localStorage.setItem('books', JSON.stringify(localStorageItems));
   } else if (e.target.textContent === 'Remove from shopping list') {
