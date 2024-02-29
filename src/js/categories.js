@@ -9,6 +9,7 @@ const refs = {
   btnList: document.querySelector('.btn-list'),
 };
 const btnAllCategories = document.querySelector('.js-bac');
+
 async function addList() {
   const obj = await booksApi.getCategories();
   const link = obj
@@ -107,16 +108,26 @@ async function renderAll() {
 
 
 // function currentColorBtn(event) {
+
 //   btnAllCategories.classList.remove('back-current');
-//   btnAllCategories.forEach(element => {
+//   btnAllCategoriesAll.forEach(element => {
+
 //     if (event.target != element) {
 //       element.classList.remove('back-current');
 //     }
     
 //   });
+
 //   const current = localStorage.getItem('currentCategorie');
 //   const currentEL = document.querySelector(`.btn-list[name="${current}"]`);
 //   currentEL.classList.remove('back-current');
+//   btnAllCategoriesAll.forEach(element => {
+//     if (event.target.name === element.target.name) {
+//       element.classList.add('back-current');
+//     }
+    
+//   });
+
 //   event.target.classList.add('back-current');
 //   localStorage.removeItem('currentCategorie');
 // }
