@@ -337,6 +337,7 @@ section {
 }
 
 #tui-pagination-container.tui-pagination {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     margin-top: 20px;
