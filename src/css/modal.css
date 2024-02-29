@@ -144,6 +144,7 @@ p {
 .basicLightbox {
   align-items: start;
 }
+
 .book-modal-close-btn .dark-theme {
   background-color: #202024;
   color: #fff;
@@ -153,6 +154,9 @@ p {
 }
 .book-modal-descr .dark-theme {
   color: #fff;
+
+.modal-text-visible {
+  display: block;
 }
 
 /* =================768======================== */

@@ -50,6 +50,10 @@ section {
     /* display: none; */
 }
 
+.dark-theme .shopping-list-section {
+    background-color: #202024;
+}
+
 .shopping-list-container {
     /* display: none; */
     margin: 0 auto;

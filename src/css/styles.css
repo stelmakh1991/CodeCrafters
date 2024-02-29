@@ -6,12 +6,12 @@
 */
 
 @import url('./reset.css');
-@import url('./header.css');
-@import url('./supportUkraine.css');
-@import url('./bs-books.css');
-@import url('./modal.css');
-@import url('./categories.css');
-@import url('./scrollup.css');
+@import url('header.css');
+@import url('supportUkraine.css');
+@import url('bs-books.css');
+@import url('modal.css');
+@import url('categories.css');
+@import url('scrollup.css');
 @import 'node_modules/modern-normalize/modern-normalize.css';
 
 
@@ -159,4 +159,19 @@ img {
     flex-direction: row;
     align-items: flex-start;
   }
+}
+
+/*==============DARK-THEME===================*/
+.dark-theme {
+  background-color: #202024;
+  color: #ffffff;
+}
+
+.dark-header {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.white-text {
+  color: #ffffff;
 }

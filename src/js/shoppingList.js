@@ -13,61 +13,6 @@ const placeholder = document.querySelector('.shop-list-placeholder');
 // const localStorageItems = JSON.parse(localStorage.getItem('books')) || [];
 const paginationContainer = document.querySelector('.tui-pagination');
 
-async function getBooksAndAddToLocalStorage(array) {
-  const localStorageArray = [];
-
-  try {
-    // Use Promise.all to await all Axios requests concurrently
-    await Promise.all(
-      array.map(async id => {
-        const url = `https://books-backend.p.goit.global/books/${id}`;
-        const response = await axios.get(url);
-        localStorageArray.push(response.data); // Push entire book object to the array
-      })
-    );
-
-    // Convert the array to a string before storing it in local storage
-    localStorage.setItem('books', JSON.stringify(localStorageArray));
-  } catch (error) {
-    console.error('Error fetching books:', error);
-    // Optionally, you can handle the error here, e.g., display an error message to the user
-    iziToast.error({
-      title: 'Error',
-      message: `Oops! Something went wrong while fetching books. Please try again later or contact support if the issue persists.`,
-      position: 'topRight',
-    });
-  }
-}
-
-const booksToFetch = [
-  '643282b1e85766588626a0dc',
-  '643282b1e85766588626a080',
-  '643282b1e85766588626a0b2',
-  '643282b1e85766588626a085',
-  '643282b1e85766588626a085',
-  '643282b1e85766588626a0dc',
-  '643282b1e85766588626a086',
-  '643282b1e85766588626a0dc',
-  '643282b1e85766588626a085',
-  '643282b1e85766588626a0b2',
-  '643282b1e85766588626a086',
-  '643282b1e85766588626a086',
-  '643282b1e85766588626a085',
-  '643282b1e85766588626a085',
-  '643282b1e85766588626a0dc',
-  '643282b1e85766588626a086',
-  '643282b1e85766588626a0dc',
-  '643282b1e85766588626a085',
-  '643282b1e85766588626a0b2',
-  '643282b1e85766588626a086',
-];
-
-getBooksAndAddToLocalStorage(booksToFetch);
-
-// ===================== Get from local storage ========================================================================
-
-
-
 // ============================ Placeholder =======================================
 
 renderShoppingListFromLocalStorage();
@@ -75,8 +20,10 @@ renderShoppingListFromLocalStorage();
 function toggleVisibility() {
     if (localStorageItems.length === 0) {
         placeholder.style.display = 'block'; // Display placeholder if no items left
+        paginationContainer.style.display = 'none'; // Hide pagination container
     } else {
         placeholder.style.display = 'none'; // Hide placeholder if items exist
+        paginationContainer.style.display = 'block'; // Display pagination container
     }
 }
 
