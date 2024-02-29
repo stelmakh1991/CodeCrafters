@@ -46,8 +46,8 @@ export async function openBasicModal(e) {
         </div>
         
         <div class="book-modal-item-thumb">
-          <h3 class="book-modal-item-title">${book.title.slice(0, 25)}</h3>
-          <p class="book-modal-author">${book.author.slice(0, 25)}</p>
+          <h3 class="book-modal-item-title">${book.title}</h3>
+          <p class="book-modal-author">${book.author}</p>
           <p class="book-modal-descr">${book.description
           }</p>
         
