@@ -42,7 +42,7 @@ const support = [
   {
     title: 'UNITED24',
     url: 'https://u24.gov.ua/uk',
-    img: united24,
+    img: worldVision,
   },
   {
     title: 'Medicins Sans Frontieres',
@@ -52,7 +52,7 @@ const support = [
   {
     title: 'World vision',
     url: 'https://www.wvi.org/emergencies/ukraine',
-    img: worldVision,
+    img: united24,
   },
 ];
 
