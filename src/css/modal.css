@@ -144,6 +144,17 @@ p {
 .basicLightbox {
   align-items: start;
 }
+
+.book-modal-close-btn .dark-theme {
+  background-color: #202024;
+  color: #fff;
+}
+.book-modal-item-title .dark-theme {
+  color: #fff;
+}
+.book-modal-descr .dark-theme {
+  color: #fff;
+
 .modal-text-visible {
   display: block;
 }
