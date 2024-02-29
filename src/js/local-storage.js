@@ -2,8 +2,8 @@
 export const localStorageItems = JSON.parse(localStorage.getItem('books')) || [];
 export const shoppingList = document.querySelector('.shopping-list');
 
-import amazonImage from '../png/amazon-book-1x.png';
-import appleImage from '../png/amazon-1x.png';
+import amazonImage from '../images/amazon1.png';
+import appleImage from '../images/book1.png';
 
 // Додавання об'єкта книги до localStorage без реквеста на сервер
 export async function onAddAndRemoveToLocalStorageOnModal(e) {
