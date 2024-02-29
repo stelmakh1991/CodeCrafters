@@ -46,8 +46,8 @@ export async function openBasicModal(e) {
         </div>
         
         <div class="book-modal-item-thumb">
-          <h3 class="book-modal-item-title">${book.title.slice(0, 25)}</h3>
-          <p class="book-modal-author">${book.author.slice(0, 25)}</p>
+          <h3 class="book-modal-item-title">${book.title}</h3>
+          <p class="book-modal-author">${book.author}</p>
           <p class="book-modal-descr">${book.description
           }</p>
         
@@ -71,6 +71,10 @@ export async function openBasicModal(e) {
          const instance = basicLightbox.create(markup, {
         className: 'modal',
         onShow: () => {
+          const modalText = instance.element().querySelector('.modal-text');
+        if (localStorageItems.find(item => item._id === id)) {
+          modalText.classList.add('modal-text-visible');
+        }
           document.addEventListener('keydown', escapeKey);
           document.addEventListener('click', onAddAndRemoveToLocalStorageOnModal);
           document.body.style.overflow = 'hidden';

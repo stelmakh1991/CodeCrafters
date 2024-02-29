@@ -8,12 +8,14 @@ const refs = {
   booksSection: document.querySelector('.bs-books-section'),
   btnList: document.querySelector('.btn-list'),
 };
+const btnAllCategories = document.querySelector('.js-bac');
+
 async function addList() {
   const obj = await booksApi.getCategories();
   const link = obj
     .map(
       list => ` <li class="categories-item" name="${list.list_name}">
-         <button class="btn-list-item" type="button" name="${list.list_name}">${list.list_name}</button>
+         <button class="btn-list" type="button" name="${list.list_name}">${list.list_name}</button>
         </li>
         `
     )
@@ -41,14 +43,24 @@ async function renderCategories(event) {
   );
   createaGalleryCategories(res.data, event);
 
-  // currentColorBtn(event);
-  // localStorage.setItem('currentCategorie', event.target.name);
+  
+// localStorage.setItem('currentCategorie', event.target.name);
+//   currentColorBtn(event);
+  
+  
 }
 async function createaGalleryCategories(data, event) {
-  const markup = `<h1 class="bs-books-title">
-       ${event.target.name}
+  btnAllCategories.classList.remove("back-current");
+  if (event.target.nodeName !== 'BUTTON') return;
+  const categoriesArray = event.target.name.split(' ');
+    const categoriesLastWord = categoriesArray[categoriesArray.length - 1];
+    const categoriesFirstPart = categoriesArray
+      .slice(0, categoriesArray.length - 1)
+      .join(' ');
+  const markup = `<h1 class="bs-books-title bs-book-title-mg">
+  ${categoriesFirstPart} <span class="last-word-color">${categoriesLastWord}</span>
       </h1> <div><ul class="bs-list list">
-       <li class="bs-books-item ">
+       <li class="bs-books-item">
        <div class="categories-item" data-list-id="${event.target.name}">
        ${data
          .map(book => {
@@ -86,16 +98,36 @@ async function createaGalleryCategories(data, event) {
   refs.booksSection.innerHTML = '';
   refs.booksSection.insertAdjacentHTML('beforeend', markup);
 }
-const btnAllCategories = document.querySelector('.js-bac');
+
 btnAllCategories.addEventListener('click', renderAll);
+
+
 async function renderAll() {
   location.reload();
 }
-// async function currentColorBtn(event) {
+
+
+// function currentColorBtn(event) {
+
 //   btnAllCategories.classList.remove('back-current');
+//   btnAllCategoriesAll.forEach(element => {
+
+//     if (event.target != element) {
+//       element.classList.remove('back-current');
+//     }
+    
+//   });
+
 //   const current = localStorage.getItem('currentCategorie');
-//   const currentEL = document.querySelector(`.btn-list[name= "${current}"]`);
+//   const currentEL = document.querySelector(`.btn-list[name="${current}"]`);
 //   currentEL.classList.remove('back-current');
+//   btnAllCategoriesAll.forEach(element => {
+//     if (event.target.name === element.target.name) {
+//       element.classList.add('back-current');
+//     }
+    
+//   });
+
 //   event.target.classList.add('back-current');
 //   localStorage.removeItem('currentCategorie');
 // }

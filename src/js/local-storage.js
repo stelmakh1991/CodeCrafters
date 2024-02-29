@@ -15,7 +15,7 @@ export async function onAddAndRemoveToLocalStorageOnModal(e) {
   const title = bookElement.querySelector('h3').textContent;
   const description = bookElement.querySelector('.book-modal-descr').textContent;
   const author = bookElement.querySelector('.book-modal-author').textContent;
-  const bookImage = bookElement.querySelector('img').src;
+  const bookImage = bookElement.querySelector('.book-modal-card-img').src;
   const amazonProductUrl = bookElement.querySelector('.book-modal-link-amazon').href;
   const appleProductUrl = bookElement.querySelector('.book-modal-link-apple').href;
   const category = bookElement.querySelector('.book-modal-thumb').dataset.id;

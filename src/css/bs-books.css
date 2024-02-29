@@ -147,6 +147,7 @@ p {
 background-color: rgb(79, 46, 232);
 color: #ffffff;
 }
+
 .bs-books-thumb-btn {
   display: flex;
   justify-content: end;
@@ -171,6 +172,14 @@ color: #ffffff;
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
+}
+
+.bs-books-see-more-btn .dark-theme {
+  background-color: #202024;
+  color: #fff;
+}
+.bs-books-item-title .dark-theme {
+  color: #fff;
 }
 
 
@@ -234,6 +243,13 @@ color: #ffffff;
   }
   .bs-category-title {
     margin-top: 98px;
+font-weight: 700;
+font-size: 48px;
+line-height: 1.08;
+letter-spacing: -0.04em;
+  }
+  .bs-book-title-mg {
+    margin-top: 98px;
   }
 }
 /* =================1440========================*/
@@ -274,11 +290,10 @@ color: #ffffff;
   .bs-category-item {
     flex-basis: calc((100% - 96px) / 5);
   }
+  .bs-category-title {
+    margin-top: 40px;
+  }
+  .bs-book-title-mg {
+    margin-top: 40px;
+  }
 }
-/*==============DARK-THEME===================*/
-.dark-theme {
-  background-color: rgb(32, 32, 36);
-  color:#ffffff
-}
-
-

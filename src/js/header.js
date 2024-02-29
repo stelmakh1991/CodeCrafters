@@ -53,3 +53,16 @@
 //     dropdownMenu.classList.toggle('active');
 //   }
 // });
+const switcher = document.querySelector('.dark');
+const body = document.querySelector('body');
+const section = document.querySelector('section');
+const header = document.querySelector('header');
+const text = document.querySelector('BUTTON');
+
+
+switcher.addEventListener('click', () => {
+    body.classList.toggle('dark-theme');
+    header.classList.toggle('dark-header');
+    text.classList.toggle('white-text');
+    section.classList.toggle('dark-theme');
+})

@@ -160,3 +160,18 @@ img {
     align-items: flex-start;
   }
 }
+
+/*==============DARK-THEME===================*/
+.dark-theme {
+  background-color: #202024;
+  color: #ffffff;
+}
+
+.dark-header {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.white-text {
+  color: #ffffff;
+}
