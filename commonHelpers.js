@@ -4,7 +4,7 @@ import{l as u,o as y}from"./assets/local-storage-787d4e6a.js";import{a as l,b as
         `).sort().join("");b.list.insertAdjacentHTML("beforeend",t)}R();b.list.addEventListener("click",f);async function f(o){const t=await l.get(`https://books-backend.p.goit.global/books/category?category=${o.target.name}`);L(t.data,o)}async function L(o,t){if(h.classList.remove("back-current"),t.target.nodeName!=="BUTTON")return;const s=t.target.name.split(" "),e=s[s.length-1],i=`<h1 class="bs-books-title bs-book-title-mg">
   ${s.slice(0,s.length-1).join(" ")} <span class="last-word-color">${e}</span>
       </h1> <div><ul class="bs-list list">
-       <li class="bs-books-item ">
+       <li class="bs-books-item">
        <div class="categories-item" data-list-id="${t.target.name}">
        ${o.map(a=>`
              <a href="#" class="link" rel="noopener noreferrer" data-id='${a._id}'>
