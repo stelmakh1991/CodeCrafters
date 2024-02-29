@@ -185,6 +185,13 @@ p {
   background-color: rgb(79, 46, 232);
   color: #fff;
 }
+.dark-theme .bs-books-title {
+  color: #fff;
+}
+.dark-theme .bs-category-title {
+  color: #fff;
+}
+
 
 /* =================375========================*/
 @media screen and (min-width: 375px) {

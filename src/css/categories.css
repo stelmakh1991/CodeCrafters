@@ -78,6 +78,13 @@
 .dark-theme .bs-books-item  {
   color: #fff;
 }
+.dark-theme .bs-books-title {
+  color: #fff;
+}
+.dark-theme .btn-list:hover,
+.dark-theme .btn-list:focus {
+  color: #eac645;
+}
 
 /* =================Медіа запити =========================== */
 
