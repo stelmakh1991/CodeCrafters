@@ -67,7 +67,8 @@ const header = document.querySelector('header');
 switcher.addEventListener('click', () => {
   body.classList.toggle('dark-theme');
   header.classList.toggle('dark-header');
-  localStorage.setItem('userTheme', 'dark');
+  const userTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+  localStorage.setItem('userTheme', userTheme);
 });
 document.addEventListener('DOMContentLoaded', checkTheme);
 function checkTheme() {
@@ -75,5 +76,8 @@ function checkTheme() {
   if (preferredTheme === 'dark') {
     body.classList.add('dark-theme');
     header.classList.add('dark-header');
+  } else {
+    body.classList.remove('dark-theme');
+    header.classList.remove('dark-header');
   }
 }
