@@ -2,6 +2,9 @@
 export const localStorageItems = JSON.parse(localStorage.getItem('books')) || [];
 export const shoppingList = document.querySelector('.shopping-list');
 
+import amazonImage from './png/amazon-book-1x.png';
+import appleImage from './png/amazon-1x.png';
+
 // Додавання об'єкта книги до localStorage без реквеста на сервер
 export async function onAddAndRemoveToLocalStorageOnModal(e) {
   const bookElement = e.target.closest('.book-modal-item');
@@ -79,10 +82,10 @@ export function renderBookFromLocalStorageWithoutFetch(book) {
         <div class="link-container">
         <p class="shopping-list-item-author">${book.author}</p>
         <div class=""link-wrapper>
-            <a class="amazon-icon" href="${book.amazon_product_url}" target="_blank" rel="noopener noreferrer nofollow"> <div class="amazon-logo hover-items-amaz-books"> <img src="./png/amazon-1x.png" alt="Amazon" />
+            <a class="amazon-icon" href="${book.amazon_product_url}" target="_blank" rel="noopener noreferrer nofollow"> <div class="amazon-logo hover-items-amaz-books"> <img src="${amazonImage}" alt="Amazon" />
             </div> </a>
             <a class="apple-icon" href="${book.apple_product_url}" target="_blank" rel="noopener noreferrer nofollow"> <div class="apple-books-logo hover-items-amaz-books">
-            <img src="./png/amazon-book-1x.png" alt="Apple book"/>
+            <img src="${appleImage}" alt="Apple book"/>
             </div> </a>
         </div>
         </div>
