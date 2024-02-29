@@ -12,7 +12,6 @@
   font: inherit;
   color: inherit;
   background-color: transparent;
-  margin-bottom: 24px;
   cursor: pointer;
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
@@ -21,9 +20,20 @@
   letter-spacing: -0.02em;
   color: rgba(17, 17, 17, 0.6);
 }
+.back-current {
+  color: #4f2ee8;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.last-word-color {
+  color: rgb(79, 46, 232);
+}
 
 /* =============================================== */
-.btn-list-item {
+/* .btn-list-item {
   padding: 0;
   border: none;
   font: inherit;
@@ -34,8 +44,8 @@
   line-height: 1.12;
   letter-spacing: -0.02em;
   color: rgba(17, 17, 17, 0.6);
-}
-.categories-box {
+} */
+.btn-list-all {
   margin-bottom: 24px;
 }
 .categories-List {
@@ -51,8 +61,8 @@
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #4f2ee8;
-}
-.btn-list-item:hover,
+} 
+/* .btn-list-item:hover,
 .btn-list-item:focus {
   font-weight: 700;
   font-size: 16px;
@@ -60,7 +70,7 @@
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #4f2ee8;
-}
+}  */
 
 /* =================Медіа запити =========================== */
 

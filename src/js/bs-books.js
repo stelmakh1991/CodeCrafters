@@ -84,8 +84,13 @@ refs.bestBooksSection.addEventListener('click', async function (event) {
 });
 
 function createCategoryItem(books) {
+  const categoriesArray = books[0].list_name.split(' ');
+    const categoriesLastWord = categoriesArray[categoriesArray.length - 1];
+    const categoriesFirstPart = categoriesArray
+      .slice(0, categoriesArray.length - 1)
+      .join(' ');
   let arr = books;
-  let bookCategoryTitle = `<h1 class="bs-category-title">${books[0].list_name}</h1>`;
+  let bookCategoryTitle = `<h1 class="bs-category-title">${categoriesFirstPart} <span class="last-word-color">${categoriesLastWord}</span></h1>`;
   let bookCategoryList = '<ul class="bs-category-list list">';
   arr.forEach(({ _id, book_image, title, author, list_name }) => {
     bookCategoryList += `<li class="bs-category-item" id="${_id}">
