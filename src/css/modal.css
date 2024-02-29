@@ -152,7 +152,7 @@ p {
   align-items: start;
 }
 
-.dark-theme .book-modal-close-btn  {
+.dark-theme .book-modal-add-btn  {
   background-color: #202024;
   color: #fff;
 }
@@ -164,6 +164,9 @@ p {
 }
 .modal-text-visible {
   display: block;
+}
+.dark-theme .book-modal-item {
+  background-color: #202024;
 }
 
 /* =================768======================== */
