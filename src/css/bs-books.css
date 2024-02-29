@@ -30,7 +30,6 @@ p {
   width: 375px;
   padding-left: 20px;
   padding-right: 20px;
-  
 }
 .bs-books-title {
   margin-top: 40px;
@@ -140,12 +139,13 @@ p {
   color: black;
   background-color: #ffffff;
   margin-bottom: 40px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .bs-books-see-more-btn:hover,
 .bs-books-see-more-btn:focus {
-background-color: rgb(79, 46, 232);
-color: #ffffff;
+  background-color: rgb(79, 46, 232);
+  color: #ffffff;
 }
 
 .bs-books-thumb-btn {
@@ -162,7 +162,6 @@ color: #ffffff;
   font-size: 32px;
   line-height: 1.19;
   letter-spacing: -0.04em;
-  
 }
 .bs-category-list {
   margin-top: 40px;
@@ -174,11 +173,16 @@ color: #ffffff;
   flex-wrap: wrap;
 }
 
-.dark-theme .bs-books-see-more-btn  {
+.dark-theme .bs-books-see-more-btn {
   background-color: #202024;
   color: #fff;
 }
-.dark-theme .bs-books-item-title  {
+.dark-theme .bs-books-item-title {
+  color: #fff;
+}
+.dark-theme .bs-books-see-more-btn:hover,
+.dark-theme .bs-books-see-more-btn:focus {
+  background-color: rgb(79, 46, 232);
   color: #fff;
 }
 .dark-theme .bs-books-title {
@@ -212,7 +216,6 @@ color: #ffffff;
     font-size: 48px;
     line-height: 1.08;
     letter-spacing: -0.04em;
-    
   }
   .bs-books-category-title {
     line-height: 1.71;
@@ -249,10 +252,10 @@ color: #ffffff;
   }
   .bs-category-title {
     margin-top: 98px;
-font-weight: 700;
-font-size: 48px;
-line-height: 1.08;
-letter-spacing: -0.04em;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
   }
   .bs-book-title-mg {
     margin-top: 98px;

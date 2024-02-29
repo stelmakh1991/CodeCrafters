@@ -165,9 +165,24 @@ p {
 .modal-text-visible {
   display: block;
 }
+
+.dark-theme .modal-text  {
+  color: #fff;
+}
+.dark-theme .book-modal-close-btn-img {
+fill: #fff;
+stroke: #fff;
+}
+.dark-theme .book-modal-close-btn:hover,
+.dark-theme .book-modal-close-btn:focus {
+  background-color: rgb(79, 46, 232);
+  color: #fff;
+  }
+
 .dark-theme .book-modal-item {
   background-color: #202024;
 }
+
 
 /* =================768======================== */
 
