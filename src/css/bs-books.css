@@ -181,6 +181,12 @@ color: #ffffff;
 .dark-theme .bs-books-item-title  {
   color: #fff;
 }
+.dark-theme .bs-books-title {
+  color: #fff;
+}
+.dark-theme .bs-category-title {
+  color: #fff;
+}
 
 
 /* =================375========================*/
