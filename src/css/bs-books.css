@@ -288,13 +288,3 @@ letter-spacing: -0.04em;
     margin-top: 40px;
   }
 }
-/*==============DARK-THEME===================*/
-.dark-theme {
-  background-color: rgb(32, 32, 36);
-  color:#ffffff
-}
-.last-word-color {
-  color: rgb(79, 46, 232);
-}
-
-
