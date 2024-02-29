@@ -26,6 +26,10 @@ header {
   margin-right: 40px;
 }
 
+.dark-header .header-logo {
+  color: #fff;
+}
+
 .header-button-wrapper{
   display: flex;
   gap: 14px;
