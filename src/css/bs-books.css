@@ -174,11 +174,11 @@ color: #ffffff;
   flex-wrap: wrap;
 }
 
-.bs-books-see-more-btn .dark-theme {
+.dark-theme .bs-books-see-more-btn  {
   background-color: #202024;
   color: #fff;
 }
-.bs-books-item-title .dark-theme {
+.dark-theme .bs-books-item-title  {
   color: #fff;
 }
 

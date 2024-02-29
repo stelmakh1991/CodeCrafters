@@ -104,10 +104,17 @@ p {
 .book-modal-icon-amazon {
   width: 69px;
   height: 19px;
+  filter: grayscale(100%);
+    display: inline-block;
 }
 .book-modal-icon-apple {
   width: 33px;
   height: 32px;
+  filter: grayscale(100%);
+    display: inline-block;
+}
+.dark-theme .book-modal-icon-amazon {
+  filter: brightness(0) invert(1);
 }
 .book-modal-close-btn {
   position: absolute;
@@ -145,14 +152,14 @@ p {
   align-items: start;
 }
 
-.book-modal-close-btn .dark-theme {
+.dark-theme .book-modal-close-btn  {
   background-color: #202024;
   color: #fff;
 }
-.book-modal-item-title .dark-theme {
+.dark-theme .book-modal-item-title  {
   color: #fff;
 }
-.book-modal-descr .dark-theme {
+.dark-theme .book-modal-descr  {
   color: #fff;
 }
 .modal-text-visible {
