@@ -144,6 +144,9 @@ p {
 .basicLightbox {
   align-items: start;
 }
+.modal-text-visible {
+  display: block;
+}
 
 /* =================768======================== */
 
