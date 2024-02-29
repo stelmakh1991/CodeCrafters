@@ -39,6 +39,7 @@
 }
 
 .support-list-container{
+    display: flex;
     margin-top: 30px;
     width: 255px;
     height: 250px;
@@ -55,7 +56,7 @@
     color: #fff;
     margin-bottom: 10px;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .support-img{
@@ -63,12 +64,19 @@
     width: 149px;
     height: 55px;
     display: flex;
-    align-items: flex-start;
-    justify-content: start;
+    /* align-items: flex-start; */
+    /* justify-content: start; */
+    vertical-align: middle;
+    /* align-items: center;
+    justify-content: center; */
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
 }
 
 .support-number{
     display: block;
+    margin-right: 10px;
 }
 
 .scroll-button{
