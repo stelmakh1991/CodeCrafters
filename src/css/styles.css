@@ -21,8 +21,6 @@
   line-height: 18px;
   font-weight: 400;
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -32,7 +30,9 @@
 }
 
 body {
-  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: rgba(252, 249, 249, 0.40);
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
@@ -121,7 +121,7 @@ img {
   }
 
 
-  .home-link-fixed {
+  #home {
     display: flex;
     justify-content: center;
     align-items: center;
