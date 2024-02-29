@@ -58,7 +58,6 @@ header {
   border-radius: 36px;
   width: 72px;
   height: 34px;
-  background: #eac645;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +69,6 @@ header {
   justify-content: center;
   margin-right: 87px;
   border-radius: 36px;
-  background-color: #eac645;
   width: 156px;
   height: 34px;
   margin-top: 24px;
@@ -94,6 +92,10 @@ header {
   margin: 2px 0;
 }
 
+
+.dark-theme .burger-1 {
+  fill: #fff;
+}
 /* .switch input {
   display: none;
 } */

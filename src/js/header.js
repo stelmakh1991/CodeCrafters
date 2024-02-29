@@ -59,7 +59,21 @@ const header = document.querySelector('header');
 
 
 
+// switcher.addEventListener('click', () => {
+//     body.classList.toggle('dark-theme');
+//     header.classList.toggle('dark-header');
+// })
+
 switcher.addEventListener('click', () => {
-    body.classList.toggle('dark-theme');
-    header.classList.toggle('dark-header');
-})
+  body.classList.toggle('dark-theme');
+  header.classList.toggle('dark-header');
+  localStorage.setItem('userTheme', 'dark');
+});
+document.addEventListener('DOMContentLoaded', checkTheme);
+function checkTheme() {
+  const preferredTheme = localStorage.getItem('userTheme');
+  if (preferredTheme === 'dark') {
+    body.classList.add('dark-theme');
+    header.classList.add('dark-header');
+  }
+}
