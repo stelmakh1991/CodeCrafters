@@ -60,7 +60,7 @@ async function createaGalleryCategories(data, event) {
   const markup = `<h1 class="bs-books-title bs-book-title-mg">
   ${categoriesFirstPart} <span class="last-word-color">${categoriesLastWord}</span>
       </h1> <div><ul class="bs-list list">
-       <li class="bs-books-item ">
+       <li class="bs-books-item">
        <div class="categories-item" data-list-id="${event.target.name}">
        ${data
          .map(book => {

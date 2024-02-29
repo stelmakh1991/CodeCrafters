@@ -72,6 +72,13 @@
   color: #4f2ee8;
 }  */
 
+.btn-list .dark-theme {
+  color: #b4afaf
+}
+.bs-books-item .dark-theme {
+  color: #fff;
+}
+
 /* =================Медіа запити =========================== */
 
 @media screen and (min-width: 768px) {
