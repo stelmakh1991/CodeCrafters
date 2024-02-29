@@ -109,9 +109,9 @@ async function renderAll() {
 
 // function currentColorBtn(event) {
 
-
 //   btnAllCategories.classList.remove('back-current');
 //   btnAllCategoriesAll.forEach(element => {
+
 //     if (event.target != element) {
 //       element.classList.remove('back-current');
 //     }
