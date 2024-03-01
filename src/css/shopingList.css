@@ -338,11 +338,12 @@ section {
 
 #tui-pagination-container.tui-pagination {
     box-sizing: border-box;
-    display: flex;
+    display: inline;
     flex-direction: row;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
+    height: 30px;
     max-width: 335px;
 }
 
