@@ -1,6 +1,4 @@
-* {
-    box-sizing: border-box;
-}
+@import 'node_modules/modern-normalize/modern-normalize.css';
 
 :root {
     font-family: "DM Sans", Inter, Avenir, Helvetica, Arial, sans-serif;
