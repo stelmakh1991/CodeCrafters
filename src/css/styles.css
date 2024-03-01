@@ -95,6 +95,11 @@ img {
   margin: 0;
 }
 
+.home-link #home {
+  color: #111111;
+  background-color: #eac645;
+}
+
 
 @media screen and (min-width: 375px) {
   .sidebar {
@@ -137,6 +142,23 @@ img {
     border-radius: 36px;
     background: #eac645;
   }
+
+  #shoping-list:hover,
+  #shoping-list:focus {
+    color: #ffffff;
+    border-radius: 40px;
+    padding: 5.5px 9px;
+    background-color: rgb(79, 46, 232);
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.596));
+    translate: 0 -1px;
+    scale: 1.03;
+    fill: #ffffff;
+  }
+
+  .dark-header #shoping-list:hover,
+  .dark-header #shoping-list:focus {
+    filter: drop-shadow(0px 3px 3px rgba(112, 80, 255, 0.501));
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -165,6 +187,7 @@ img {
 .dark-theme {
   background-color: #202024;
   color: #ffffff;
+  fill: #ffffff;
 }
 
 .dark-header {

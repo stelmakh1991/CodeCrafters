@@ -148,11 +148,12 @@ section {
 
 .delete-btn:hover,
 .delete-btn:focus {
-    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.596));
+    translate: 0 -2px;
 }
 
 .dark-theme .delete-btn:hover {
-    filter: drop-shadow(0px 3px 3px rgba(130, 132, 156, 0.35));
+    filter: drop-shadow(0px 3px 3px rgb(112, 80, 255));
 }
 
 .shopping-list-title-span {
@@ -543,39 +544,58 @@ strong.tui-page-btn.tui-is-selected {
 
 @media screen and (min-width: 768px) {
     .home-link-fixed {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            line-height: 1.28571;
-            letter-spacing: -0.04em;
-            text-transform: uppercase;
-            color: #111;
-            text-decoration: none;
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.28571;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        color: #111;
+        text-decoration: none;
+    }
+
+    #home:hover,
+    #home:focus {
+         color: #ffffff;
+        border-radius: 40px;
+        padding: 8px 12px;
+        background-color: rgb(79, 46, 232);
+        filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.596));
+        translate: 0 -1px;
+        scale: 1.03;
+        fill: #ffffff;
+    }
+        
+    .dark-header #home:hover,
+    .dark-header #home:focus {
+        filter: drop-shadow(0px 3px 3px rgb(112, 80, 255));
+    }
     
-        #shoping-list {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 36px;
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 1.29;
-            letter-spacing: -0.04em;
-            text-transform: uppercase;
-            color: #111;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 36px;
-            background: #eac645;
-        }
-        #logo-shop {
-            fill: #111111;
-        }
+    #shoping-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 36px;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.29;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 36px;
+        background: #eac645;
+    }
+    #shoping-list a {
+        color: #111111;
+    }
+    #logo-shop {
+        fill: #111111;
+    }
 }
 
 @media screen and (min-width: 1440px) {

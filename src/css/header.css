@@ -98,9 +98,12 @@ header {
   margin: 2px 0;
 }
 
+.burger-button .burger-1 {
+  stroke: #111111;
+}
 
-.dark-theme .burger-1 {
-  fill: #fff;
+.dark-theme .burger-button .burger-1 {
+  stroke: #fff;
 }
 /* .switch input {
   display: none;
@@ -170,33 +173,6 @@ input {
   background-color: black;
   transition: 0.3s;
 }
-
-/* .burger-button span:nth-child(1) {
-  top: 0;
-}
-
-.burger-button span:nth-child(2) {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.burger-button span:nth-child(3) {
-  bottom: 0;
-}
-
-.burger-button.active span:nth-child(1) {
-  top: 50%;
-  transform: translateY(-50%) rotate(45deg);
-}
-
-.burger-button.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.burger-button.active span:nth-child(3) {
-  bottom: 50%;
-  transform: translateY(50%) rotate(-45deg);
-} */
 
 .dropdown-menu {
   display: none;

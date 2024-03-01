@@ -10,8 +10,14 @@
     width: 64px;
     height: 64px;
     transition: opacity 0.3s ease-in-out;
-    
   }
+
+.btn-up:hover,
+.btn-up:focus {
+  filter: drop-shadow(0px 3px 3px rgba(112, 80, 255, 0.501));
+  translate: 0 -2px;
+  scale: 1.03;
+}
   
   .btn-up::before {
     content: "";

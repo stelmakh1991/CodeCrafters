@@ -93,7 +93,10 @@ p {
 .book-modal-add-btn:hover,
 .book-modal-add-btn:focus {
   background-color: rgb(79, 46, 232);
+  translate: 0 -2px;
+  scale: 1.03;
   color: #ffffff;
+  filter: drop-shadow(0px 3px 3px rgba(130, 132, 156, 0.35));
 }
 .book-modal-icon {
   display: flex;
@@ -126,7 +129,19 @@ p {
   border: none;
   outline: none;
   z-index: 1;
+  padding: 5px;
 }
+
+.book-modal-close-btn:hover,
+.book-modal-close-btn:focus {
+  background-color: rgb(79, 46, 232);
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.596));
+  border-radius: 50%;
+  translate: 0 -2px;
+  scale: 1.1;
+  color: #fff;
+}  
+
 .modal-text {
   font-family: DM Sans;
   font-weight: 400;
@@ -156,6 +171,13 @@ p {
   background-color: #202024;
   color: #fff;
 }
+
+.dark-theme .book-modal-add-btn:hover {
+  scale: 1.03;
+  background-color: rgb(79, 46, 232);
+  filter: drop-shadow(0px 3px 3px rgba(112, 80, 255, 0.501));
+}
+
 .dark-theme .book-modal-item-title  {
   color: #fff;
 }
@@ -170,12 +192,17 @@ p {
   color: #fff;
 }
 .dark-theme .book-modal-close-btn-img {
-fill: #fff;
-stroke: #fff;
+  filter: grayscale(100%);
+  display: inline-block;
+  filter: brightness(0) invert(1);
 }
 .dark-theme .book-modal-close-btn:hover,
 .dark-theme .book-modal-close-btn:focus {
   background-color: rgb(79, 46, 232);
+  filter: drop-shadow(0px 3px 3px rgba(112, 80, 255, 0.501));
+  border-radius: 50%;
+  translate: 0 -2px;
+  scale: 1.1;
   color: #fff;
   }
 
