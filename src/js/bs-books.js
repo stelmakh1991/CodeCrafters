@@ -32,8 +32,12 @@ function createGalleryItem(data) {
                     book._id
                   }'
                 />
-                <div class="bs-books-overlay">
-                <p class="bs-books-overlay-title">quick view</p>
+                <div class="bs-books-overlay" data-id='${
+                  book._id
+                }'>
+                <p class="bs-books-overlay-title" data-id='${
+                  book._id
+                }'>quick view</p>
                 </div>
                </div> 
                 <div class="bs-books-item-thumb">
@@ -100,8 +104,12 @@ function createCategoryItem(books) {
       <img src="${book_image}" alt="${title}" class="bs-books-card-img" data-id='${
         _id
       }'/>
-        <div class="bs-books-overlay">
-          <p class="bs-books-overlay-title">quick view</p>
+        <div class="bs-books-overlay" data-id='${
+          _id
+        }'>
+          <p class="bs-books-overlay-title" data-id='${
+            _id
+          }'>quick view</p>
         </div>          
       </div>
       <div class="bs-books-item-thumb">

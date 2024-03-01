@@ -78,8 +78,12 @@ async function createaGalleryCategories(data, event) {
                     book._id
                   }'
                 />
-                <div class="bs-books-overlay">
-                <p class="bs-books-overlay-title">quick view</p>
+                <div class="bs-books-overlay" data-id='${
+                  book._id
+                }'>
+                <p class="bs-books-overlay-title" data-id='${
+                  book._id
+                }'>quick view</p>
                 </div>
                </div> 
                 <div class="bs-books-item-thumb">

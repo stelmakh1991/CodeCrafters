@@ -18,7 +18,7 @@ import xcloseIcon from "../images/x-close.png";
 
 export async function openBasicModal(e) {
     e.preventDefault();
-    if (e.target.nodeName !== 'IMG') {
+    if (e.target.nodeName !== 'DIV' && e.target.nodeName !== 'P')  {
       return;
     }
     e.stopPropagation();
