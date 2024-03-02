@@ -18,13 +18,13 @@ const paginationContainer = document.querySelector('.tui-pagination');
 renderShoppingListFromLocalStorage();
 
 function toggleVisibility() {
-    if (localStorageItems.length === 0) {
-        placeholder.style.display = 'block'; // Display placeholder if no items left
-        paginationContainer.style.display = 'none'; // Hide pagination container
-    } else {
-        placeholder.style.display = 'none'; // Hide placeholder if items exist
-        paginationContainer.style.display = 'block'; // Display pagination container
-    }
+  if (localStorageItems.length === 0) {
+    placeholder.style.display = 'block';
+    paginationContainer.style.display = 'none';
+  } else {
+    placeholder.style.display = 'none';
+    paginationContainer.style.display = 'flex';
+  }
 }
 
 toggleVisibility();
