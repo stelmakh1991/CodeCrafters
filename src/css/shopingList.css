@@ -364,7 +364,9 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* height: 38px;    NEW STYLES BELOW!*/
     height: 38px;
+    padding: 6px 0 6px;
 }
 
 strong.tui-page-btn.tui-is-selected {
@@ -532,8 +534,9 @@ strong.tui-page-btn.tui-is-selected {
 
     .tui-pagination .tui-page-btn {
         width: 44px;
-        /* height: 44px; */
+        height: 44px;
         padding: 12px 14px;
+        font-size: 18px;
     }
 }
 
