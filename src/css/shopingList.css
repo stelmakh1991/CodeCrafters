@@ -366,7 +366,7 @@ section {
     align-items: center;
     /* height: 38px;    NEW STYLES BELOW!*/
     height: 38px;
-    padding: 6px 0 6px;
+    padding: 5px 0 5px;
 }
 
 strong.tui-page-btn.tui-is-selected {
